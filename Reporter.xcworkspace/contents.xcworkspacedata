@@ -4,6 +4,20 @@
    <FileRef
       location = "group:Reporter.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:Features"
+      name = "Features">
+   </Group>
+   <Group
+      location = "group:Shares"
+      name = "Shares">
+      <FileRef
+         location = "group:Data/Data.xcodeproj">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Core/Core.xcodeproj">
+   </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

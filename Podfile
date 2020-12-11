@@ -1,5 +1,7 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+workspace 'Reporter'
+
+platform :ios, '14.0'
 
 target 'Reporter' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -15,5 +17,15 @@ target 'Reporter' do
   target 'ReporterUITests' do
     # Pods for testing
   end
+
+end
+
+target 'Core' do
+  project 'Core/Core'
+
+end
+
+target 'Data' do
+  project 'Shares/Data/Data'
 
 end
