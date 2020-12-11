@@ -19,6 +19,7 @@
 		0ECBC3E5258378F900DF612E /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC3E3258378F900DF612E /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0ECBC3E8258378FE00DF612E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC3E7258378FE00DF612E /* Core.framework */; };
 		0ECBC3E9258378FE00DF612E /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC3E7258378FE00DF612E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0ECBC415258380DC00DF612E /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBC414258380DC00DF612E /* TabBarView.swift */; };
 		8C95407B7EC130E27CE85980 /* Pods_Reporter_ReporterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE7AE859CCDA22753698B30 /* Pods_Reporter_ReporterUITests.framework */; };
 		B0A0AD9601F1B68328C90C0F /* Pods_Reporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4095720F559204EF97B91ED8 /* Pods_Reporter.framework */; };
 		E0276AFEBE1A118B18E83C40 /* Pods_ReporterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734570588B47D17CDB32814F /* Pods_ReporterTests.framework */; };
@@ -74,6 +75,7 @@
 		0ECBC356258373F600DF612E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ECBC3E3258378F900DF612E /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECBC3E7258378FE00DF612E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ECBC414258380DC00DF612E /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		2F24926281BE1AA4A980475E /* Pods-ReporterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReporterTests.release.xcconfig"; path = "Target Support Files/Pods-ReporterTests/Pods-ReporterTests.release.xcconfig"; sourceTree = "<group>"; };
 		36BD3756E3D94CA58D2BD4A5 /* Pods-Reporter-ReporterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reporter-ReporterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Reporter-ReporterUITests/Pods-Reporter-ReporterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4095720F559204EF97B91ED8 /* Pods_Reporter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reporter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 		0ECBC331258373F100DF612E /* Reporter */ = {
 			isa = PBXGroup;
 			children = (
+				0ECBC41125837D9500DF612E /* Scenes */,
 				0ECBC332258373F100DF612E /* ReporterApp.swift */,
 				0ECBC334258373F100DF612E /* ContentView.swift */,
 				0ECBC336258373F600DF612E /* Assets.xcassets */,
@@ -174,6 +177,22 @@
 				0ECBC356258373F600DF612E /* Info.plist */,
 			);
 			path = ReporterUITests;
+			sourceTree = "<group>";
+		};
+		0ECBC41125837D9500DF612E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0ECBC41225837DA900DF612E /* TabBar */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0ECBC41225837DA900DF612E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0ECBC414258380DC00DF612E /* TabBarView.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		11B633D8A6BA4D932C99453D /* Frameworks */ = {
@@ -406,6 +425,7 @@
 				0ECBC33F258373F600DF612E /* Reporter.xcdatamodeld in Sources */,
 				0ECBC33C258373F600DF612E /* Persistence.swift in Sources */,
 				0ECBC335258373F100DF612E /* ContentView.swift in Sources */,
+				0ECBC415258380DC00DF612E /* TabBarView.swift in Sources */,
 				0ECBC333258373F100DF612E /* ReporterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
