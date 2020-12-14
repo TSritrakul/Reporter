@@ -10,6 +10,8 @@
 		0EEB98A02587B798000CAE13 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEB98962587B798000CAE13 /* Authentication.framework */; };
 		0EEB98A52587B798000CAE13 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98A42587B798000CAE13 /* AuthenticationTests.swift */; };
 		0EEB98A72587B798000CAE13 /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EEB98992587B798000CAE13 /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EEB98CC2587B89A000CAE13 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98CB2587B89A000CAE13 /* GoogleSignInManager.swift */; };
+		0EEB98D02587B8A2000CAE13 /* GoogleSignInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98CF2587B8A2000CAE13 /* GoogleSignInType.swift */; };
 		A030FAA2969A39651763230E /* libPods-Authentication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFEE426A34B8435F7622EF /* libPods-Authentication.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		0EEB989F2587B798000CAE13 /* AuthenticationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEB98A42587B798000CAE13 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		0EEB98A62587B798000CAE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EEB98CB2587B89A000CAE13 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
+		0EEB98CF2587B8A2000CAE13 /* GoogleSignInType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInType.swift; sourceTree = "<group>"; };
 		6800E4F9624D93F3212F29AA /* Pods-Authentication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.debug.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.debug.xcconfig"; sourceTree = "<group>"; };
 		B1C319FAA657474271A2C0F8 /* Pods-Authentication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.release.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.release.xcconfig"; sourceTree = "<group>"; };
 		DECFEE426A34B8435F7622EF /* libPods-Authentication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Authentication.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,7 @@
 		0EEB98982587B798000CAE13 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				0EEB98C92587B84D000CAE13 /* Manager */,
 				0EEB98992587B798000CAE13 /* Authentication.h */,
 				0EEB989A2587B798000CAE13 /* Info.plist */,
 			);
@@ -91,6 +96,23 @@
 				0EEB98A62587B798000CAE13 /* Info.plist */,
 			);
 			path = AuthenticationTests;
+			sourceTree = "<group>";
+		};
+		0EEB98C92587B84D000CAE13 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0EEB98CA2587B875000CAE13 /* GoogleSignInManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0EEB98CA2587B875000CAE13 /* GoogleSignInManager */ = {
+			isa = PBXGroup;
+			children = (
+				0EEB98CB2587B89A000CAE13 /* GoogleSignInManager.swift */,
+				0EEB98CF2587B8A2000CAE13 /* GoogleSignInType.swift */,
+			);
+			path = GoogleSignInManager;
 			sourceTree = "<group>";
 		};
 		7224DD5E0B7CAE91900FF332 /* Pods */ = {
@@ -173,6 +195,7 @@
 				TargetAttributes = {
 					0EEB98952587B798000CAE13 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					0EEB989E2587B798000CAE13 = {
 						CreatedOnToolsVersion = 12.2;
@@ -245,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EEB98D02587B8A2000CAE13 /* GoogleSignInType.swift in Sources */,
+				0EEB98CC2587B89A000CAE13 /* GoogleSignInManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6800E4F9624D93F3212F29AA /* Pods-Authentication.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -401,6 +427,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Authentication/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rolland.Authentication;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1C319FAA657474271A2C0F8 /* Pods-Authentication.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -426,6 +455,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Authentication/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,6 +472,7 @@
 		0EEB98AE2587B798000CAE13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = AuthenticationTests/Info.plist;
@@ -460,6 +491,7 @@
 		0EEB98AF2587B798000CAE13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = AuthenticationTests/Info.plist;
