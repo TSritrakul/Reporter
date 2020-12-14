@@ -13,11 +13,11 @@ struct TabBarView: View {
     var body: some View {
         TabView(selection: $selectedView,
                 content:  {
-                    Text("Tab Content 1")
-                        .tabItem { Text("Tab Label 1") }
+                    Text("Summary")
+                        .tabItem { Text("Summary") }
                         .tag(1)
-                    Text("Tab Content 2")
-                        .tabItem { /*@START_MENU_TOKEN@*/Text("Tab Label 2")/*@END_MENU_TOKEN@*/ }
+                    Text("Transaction")
+                        .tabItem { Text("Transaction") }
                         .tag(2)
                 })
     }
