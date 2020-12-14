@@ -6,7 +6,7 @@ platform :ios, '14.0'
 target 'Reporter' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  pod 'GoogleSignIn'
   # Pods for Reporter
 
   target 'ReporterTests' do
@@ -17,6 +17,11 @@ target 'Reporter' do
   target 'ReporterUITests' do
     # Pods for testing
   end
+
+end
+
+target 'Authentication' do
+  project 'Shares/Authentication/Authentication'
 
 end
 

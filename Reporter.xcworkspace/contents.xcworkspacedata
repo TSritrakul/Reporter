@@ -12,6 +12,9 @@
       location = "group:Shares"
       name = "Shares">
       <FileRef
+         location = "group:Authentication/Authentication.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Data/Data.xcodeproj">
       </FileRef>
    </Group>
