@@ -9,5 +9,6 @@ import Foundation
 
 public protocol GoogleSignInType {
     static func signIn()
+    static func signOut()
     static func config()
 }

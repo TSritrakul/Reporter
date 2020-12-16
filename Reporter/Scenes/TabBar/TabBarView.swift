@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Authentication
 
 struct TabBarView: View {
     @State var selectedView: Int = 1
@@ -13,7 +14,7 @@ struct TabBarView: View {
     var body: some View {
         TabView(selection: $selectedView,
                 content:  {
-                    Text("Summary")
+                    SignInView()
                         .tabItem { Text("Summary") }
                         .tag(1)
                     Text("Transaction")

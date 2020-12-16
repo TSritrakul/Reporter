@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E41158A258919E800481F5C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E411589258919E800481F5C /* SignInView.swift */; };
 		0EEB98A02587B798000CAE13 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEB98962587B798000CAE13 /* Authentication.framework */; };
 		0EEB98A52587B798000CAE13 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98A42587B798000CAE13 /* AuthenticationTests.swift */; };
 		0EEB98A72587B798000CAE13 /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EEB98992587B798000CAE13 /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E411589258919E800481F5C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		0EEB98962587B798000CAE13 /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEB98992587B798000CAE13 /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		0EEB989A2587B798000CAE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E4115872589195500481F5C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0E4115882589199600481F5C /* SignIn */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0E4115882589199600481F5C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				0E411589258919E800481F5C /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		0EEB988C2587B798000CAE13 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +100,7 @@
 		0EEB98982587B798000CAE13 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				0E4115872589195500481F5C /* Scenes */,
 				0EEB98C92587B84D000CAE13 /* Manager */,
 				0EEB98992587B798000CAE13 /* Authentication.h */,
 				0EEB989A2587B798000CAE13 /* Info.plist */,
@@ -268,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E41158A258919E800481F5C /* SignInView.swift in Sources */,
 				0EEB98D02587B8A2000CAE13 /* GoogleSignInType.swift in Sources */,
 				0EEB98CC2587B89A000CAE13 /* GoogleSignInManager.swift in Sources */,
 			);

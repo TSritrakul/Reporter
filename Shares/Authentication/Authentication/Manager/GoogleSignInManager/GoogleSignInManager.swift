@@ -21,4 +21,8 @@ public class GoogleSignInManager {
     public func signIn() {
         self.googleSignInType.signIn()
     }
+    
+    public func signOut() {
+        self.googleSignInType.signOut()
+    }
 }
