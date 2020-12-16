@@ -9,6 +9,7 @@ import SwiftUI
 import Authentication
 
 struct TabBarView: View {
+    @ObservedObject public var viewModel: TabBarViewModel
     @State var selectedView: Int = 1
     
     var body: some View {
@@ -26,6 +27,6 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView()
+        TabBarView(viewModel: TabBarViewModel())
     }
 }

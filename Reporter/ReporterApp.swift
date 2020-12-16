@@ -21,7 +21,7 @@ struct ReporterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            TabBarView(viewModel: TabBarViewModel())
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

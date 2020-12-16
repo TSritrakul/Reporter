@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		095F1D225CAD40287C48D5DE /* libPods-Data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8ADC7C5160A8F58934E601 /* libPods-Data.a */; };
+		0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */; };
+		0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC4590258A558C00657C6F /* Data.xcdatamodeld */; };
+		0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC45A1258A585700657C6F /* CoreDataProvider.swift */; };
 		0ECBC3822583773000DF612E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC3782583772F00DF612E /* Data.framework */; };
 		0ECBC3872583773000DF612E /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBC3862583773000DF612E /* DataTests.swift */; };
 		0ECBC3892583773000DF612E /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECBC37B2583772F00DF612E /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0EAC4591258A558C00657C6F /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		0EAC45A1258A585700657C6F /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		0ECBC3782583772F00DF612E /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECBC37B2583772F00DF612E /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		0ECBC37C2583772F00DF612E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +64,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EAC458A258A4F8500657C6F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0EAC45A0258A583F00657C6F /* Provider */,
+				0EAC4596258A55AA00657C6F /* Manager */,
+				0EAC4595258A559A00657C6F /* Database */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0EAC4595258A559A00657C6F /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0EAC4590258A558C00657C6F /* Data.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		0EAC4596258A55AA00657C6F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0EAC45A0258A583F00657C6F /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				0EAC45A1258A585700657C6F /* CoreDataProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		0ECBC36E2583772F00DF612E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,7 @@
 		0ECBC37A2583772F00DF612E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0EAC458A258A4F8500657C6F /* CoreData */,
 				0ECBC37B2583772F00DF612E /* Data.h */,
 				0ECBC37C2583772F00DF612E /* Info.plist */,
 			);
@@ -177,6 +218,7 @@
 				TargetAttributes = {
 					0ECBC3772583772F00DF612E = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					0ECBC3802583773000DF612E = {
 						CreatedOnToolsVersion = 12.2;
@@ -249,6 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */,
+				0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */,
+				0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C48273ACB895E7DF03125EFC /* Pods-Data.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -414,6 +460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rolland.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3B1F4F43BD64BB94E16EFF6 /* Pods-Data.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -448,6 +496,7 @@
 		0ECBC3902583773000DF612E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = DataTests/Info.plist;
@@ -466,6 +515,7 @@
 		0ECBC3912583773000DF612E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = DataTests/Info.plist;
@@ -512,6 +562,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0EAC4590258A558C00657C6F /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0EAC4591258A558C00657C6F /* Data.xcdatamodel */,
+			);
+			currentVersion = 0EAC4591258A558C00657C6F /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0ECBC36F2583772F00DF612E /* Project object */;
 }

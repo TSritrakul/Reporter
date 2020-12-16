@@ -72,9 +72,17 @@
 		0E4115882589199600481F5C /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				0E411589258919E800481F5C /* SignInView.swift */,
+				0EAC459D258A55E000657C6F /* View */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		0EAC459D258A55E000657C6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E411589258919E800481F5C /* SignInView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0EEB988C2587B798000CAE13 = {
