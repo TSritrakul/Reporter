@@ -15,6 +15,8 @@
 		0ECBC3872583773000DF612E /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBC3862583773000DF612E /* DataTests.swift */; };
 		0ECBC3892583773000DF612E /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECBC37B2583772F00DF612E /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0ECBC40125837A3600DF612E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC40025837A3600DF612E /* Core.framework */; };
+		0EE757A7258BB15D002A5EFE /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE757A5258BB15D002A5EFE /* Profile+CoreDataClass.swift */; };
+		0EE757A8258BB15D002A5EFE /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE757A6258BB15D002A5EFE /* Profile+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		0ECBC3862583773000DF612E /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		0ECBC3882583773000DF612E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ECBC40025837A3600DF612E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EE757A5258BB15D002A5EFE /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EE757A6258BB15D002A5EFE /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3B1F4F43BD64BB94E16EFF6 /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
 		C48273ACB895E7DF03125EFC /* Pods-Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.debug.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.debug.xcconfig"; sourceTree = "<group>"; };
 		DD8ADC7C5160A8F58934E601 /* libPods-Data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,7 @@
 		0EAC458A258A4F8500657C6F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				0EE757A4258BB0CA002A5EFE /* Entities */,
 				0EAC45A0258A583F00657C6F /* Provider */,
 				0EAC4596258A55AA00657C6F /* Manager */,
 				0EAC4595258A559A00657C6F /* Database */,
@@ -135,6 +140,23 @@
 				0ECBC3882583773000DF612E /* Info.plist */,
 			);
 			path = DataTests;
+			sourceTree = "<group>";
+		};
+		0EE757A4258BB0CA002A5EFE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0EE757AD258BB166002A5EFE /* Profile */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0EE757AD258BB166002A5EFE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0EE757A5258BB15D002A5EFE /* Profile+CoreDataClass.swift */,
+				0EE757A6258BB15D002A5EFE /* Profile+CoreDataProperties.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		177BB89F1901DD62186D80D6 /* Pods */ = {
@@ -293,7 +315,9 @@
 			files = (
 				0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */,
 				0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */,
+				0EE757A8258BB15D002A5EFE /* Profile+CoreDataProperties.swift in Sources */,
 				0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */,
+				0EE757A7258BB15D002A5EFE /* Profile+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
