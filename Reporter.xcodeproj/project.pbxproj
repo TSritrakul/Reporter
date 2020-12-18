@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0EAC4587258A4EBA00657C6F /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC4586258A4EBA00657C6F /* TabBarViewModel.swift */; };
 		0EB7A84F258CE95500336243 /* ReporterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A84E258CE95500336243 /* ReporterScene.swift */; };
+		0EB7A85E258D033500336243 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A85D258D033500336243 /* MainViewModel.swift */; };
+		0EB7A864258D034900336243 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A863258D034900336243 /* MainView.swift */; };
+		0EB7A885258D147700336243 /* Auth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A884258D147700336243 /* Auth+Extension.swift */; };
 		0ECBC333258373F100DF612E /* ReporterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBC332258373F100DF612E /* ReporterApp.swift */; };
 		0ECBC335258373F100DF612E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBC334258373F100DF612E /* ContentView.swift */; };
 		0ECBC337258373F600DF612E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECBC336258373F600DF612E /* Assets.xcassets */; };
@@ -40,7 +43,6 @@
 		0EEB984A2587A619000CAE13 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 0EEB98492587A619000CAE13 /* FirebaseRemoteConfig */; };
 		0EEB984C2587A619000CAE13 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0EEB984B2587A619000CAE13 /* FirebaseStorageSwift-Beta */; };
 		0EEB984E2587A619000CAE13 /* GoogleUtilities_UserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 0EEB984D2587A619000CAE13 /* GoogleUtilities_UserDefaults */; };
-		0EEB98532587B343000CAE13 /* GoogleSignIn+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98522587B343000CAE13 /* GoogleSignIn+Extension.swift */; };
 		0EEB98B32587B7B3000CAE13 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEB98B22587B7B3000CAE13 /* Authentication.framework */; };
 		0EEB98B42587B7B3000CAE13 /* Authentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEB98B22587B7B3000CAE13 /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C95407B7EC130E27CE85980 /* Pods_Reporter_ReporterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE7AE859CCDA22753698B30 /* Pods_Reporter_ReporterUITests.framework */; };
@@ -85,6 +87,9 @@
 		07EC377268ADBD58019893F6 /* Pods-Reporter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reporter.debug.xcconfig"; path = "Target Support Files/Pods-Reporter/Pods-Reporter.debug.xcconfig"; sourceTree = "<group>"; };
 		0EAC4586258A4EBA00657C6F /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		0EB7A84E258CE95500336243 /* ReporterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporterScene.swift; sourceTree = "<group>"; };
+		0EB7A85D258D033500336243 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0EB7A863258D034900336243 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0EB7A884258D147700336243 /* Auth+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+Extension.swift"; sourceTree = "<group>"; };
 		0ECBC32F258373F100DF612E /* Reporter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reporter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECBC332258373F100DF612E /* ReporterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporterApp.swift; sourceTree = "<group>"; };
 		0ECBC334258373F100DF612E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,7 +109,6 @@
 		0ECBC414258380DC00DF612E /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0EE757BF258BC480002A5EFE /* AuthenticationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationScene.swift; sourceTree = "<group>"; };
 		0EEB982A2587A39E000CAE13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0EEB98522587B343000CAE13 /* GoogleSignIn+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleSignIn+Extension.swift"; sourceTree = "<group>"; };
 		0EEB98B22587B7B3000CAE13 /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F24926281BE1AA4A980475E /* Pods-ReporterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReporterTests.release.xcconfig"; path = "Target Support Files/Pods-ReporterTests/Pods-ReporterTests.release.xcconfig"; sourceTree = "<group>"; };
 		36BD3756E3D94CA58D2BD4A5 /* Pods-Reporter-ReporterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reporter-ReporterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Reporter-ReporterUITests/Pods-Reporter-ReporterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,39 @@
 			path = ReporterScene;
 			sourceTree = "<group>";
 		};
+		0EB7A854258D031500336243 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0EB7A856258D032500336243 /* View */,
+				0EB7A855258D031F00336243 /* ViewModel */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0EB7A855258D031F00336243 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EB7A85D258D033500336243 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EB7A856258D032500336243 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EB7A863258D034900336243 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EB7A883258D146600336243 /* Auth+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0EB7A884258D147700336243 /* Auth+Extension.swift */,
+			);
+			path = "Auth+Extension";
+			sourceTree = "<group>";
+		};
 		0ECBC326258373F100DF612E = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +302,7 @@
 		0ECBC41125837D9500DF612E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0EB7A854258D031500336243 /* Main */,
 				0ECBC41225837DA900DF612E /* TabBar */,
 			);
 			path = Scenes;
@@ -290,7 +328,7 @@
 		0EEB98512587B318000CAE13 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0EEB98522587B343000CAE13 /* GoogleSignIn+Extension.swift */,
+				0EB7A883258D146600336243 /* Auth+Extension */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -617,15 +655,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EEB98532587B343000CAE13 /* GoogleSignIn+Extension.swift in Sources */,
+				0EB7A885258D147700336243 /* Auth+Extension.swift in Sources */,
 				0ECBC33F258373F600DF612E /* Reporter.xcdatamodeld in Sources */,
 				0EE757C0258BC480002A5EFE /* AuthenticationScene.swift in Sources */,
 				0ECBC33C258373F600DF612E /* Persistence.swift in Sources */,
 				0ECBC335258373F100DF612E /* ContentView.swift in Sources */,
 				0EB7A84F258CE95500336243 /* ReporterScene.swift in Sources */,
 				0ECBC415258380DC00DF612E /* TabBarView.swift in Sources */,
+				0EB7A864258D034900336243 /* MainView.swift in Sources */,
 				0EAC4587258A4EBA00657C6F /* TabBarViewModel.swift in Sources */,
 				0ECBC333258373F100DF612E /* ReporterApp.swift in Sources */,
+				0EB7A85E258D033500336243 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

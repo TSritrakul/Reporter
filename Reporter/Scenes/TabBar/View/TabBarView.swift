@@ -21,6 +21,10 @@ struct TabBarView: View {
                     Text("Transaction")
                         .tabItem { Text("Transaction") }
                         .tag(2)
+                        .onAppear {
+                            AuthenticationManager.shared.signOut()
+//                            self.viewModel.fetchData()
+                        }
                 })
     }
 }

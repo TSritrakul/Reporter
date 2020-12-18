@@ -16,25 +16,12 @@ struct ReporterApp: App {
     
     init() {
         FirebaseApp.configure()
-        GoogleSignInManager.shared.configGoogleSignIn(GIDSignIn.self)
+        AuthenticationManager.shared.configAuthentication(GIDSignIn.self)
     }
 
     var body: some Scene {
         WindowGroup {
-            SignInViewRepresentable()
-//            TabBarView(viewModel: TabBarViewModel())
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MainView(viewModel: MainViewModel())
         }
-    }
-}
-
-struct SignInViewRepresentable: UIViewControllerRepresentable {
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SignInViewRepresentable>) -> UIViewController {
-        return AuthenticationScene.viewController(.signInView)()
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<SignInViewRepresentable>) {
     }
 }

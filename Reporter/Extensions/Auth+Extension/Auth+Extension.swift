@@ -1,8 +1,8 @@
 //
-//  GoogleSignIn+Extension.swift
+//  Auth+Extension.swift
 //  Reporter
 //
-//  Created by Thatchaphon Sritrakul on 14/12/2563 BE.
+//  Created by Thatchaphon Sritrakul on 18/12/2563 BE.
 //
 
 import Foundation
@@ -12,13 +12,27 @@ import Firebase
 import Combine
 import Data
 
-extension GIDSignIn: GoogleSignInType {
+extension GIDSignIn: AuthenticationType {
     
     public static var isLogin: PassthroughSubject = PassthroughSubject<Bool, Never>()
     
     public static func config() {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = GIDSignIn.sharedInstance()
+        
+        _ = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
+                let entity = Profile(context: coreDataProvider.context)
+                entity.userID = user?.uid
+                coreDataProvider.save(entity)
+                GIDSignIn.isLogin.send(true)
+            } else {
+                let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
+                coreDataProvider.clear(Profile.self)
+                GIDSignIn.isLogin.send(false)
+            }
+        }
     }
     
     public static func signIn() {
@@ -56,10 +70,7 @@ extension GIDSignIn: GIDSignInDelegate {
           guard let authentication = user.authentication else { return }
           let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                             accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
-            guard let self = self else { return }
-            GIDSignIn.isLogin.send(true)
-            print(authResult)
+        Auth.auth().signIn(with: credential) { (authResult, error) in
             
 //            let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
 //            let entity = Profile(context: coreDataProvider.context)

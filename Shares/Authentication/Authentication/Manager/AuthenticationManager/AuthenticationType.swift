@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public protocol GoogleSignInType {
+public protocol AuthenticationType {
     static func signIn()
     static func signOut()
     static func config()

@@ -24,6 +24,7 @@ public class CoreDataProvider<T: NSManagedObject> {
         self.persistentContainer = CoreDataManager.shared.getPersistentContainer(coreDataType: coreDataName)
     }
     
+    @discardableResult
     public func save(_ data: T) -> AnyPublisher<T, CoreDataProviderError> {
         if self.context.hasChanges {
             do {
@@ -52,6 +53,7 @@ public class CoreDataProvider<T: NSManagedObject> {
         .eraseToAnyPublisher()
     }
     
+    @discardableResult
     public func clear(_ type: T.Type) -> AnyPublisher<Void, CoreDataProviderError> {
         return Future { (promise) in
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: T.self))

@@ -17,14 +17,8 @@ public struct SignInView: View {
     
     public var body: some View {
         VStack {
-            if self.viewModel.isLogin {
-                Button("LogOut") {
-                    GoogleSignInManager.shared.signOut()
-                }
-            } else {
-                Button("SignIn with Google") {
-                    GoogleSignInManager.shared.signIn()
-                }
+            Button("SignIn with Google") {
+                AuthenticationManager.shared.signIn()
             }
         }
     }
