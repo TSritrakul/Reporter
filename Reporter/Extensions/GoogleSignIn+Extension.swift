@@ -9,8 +9,13 @@ import Foundation
 import Authentication
 import GoogleSignIn
 import Firebase
+import Combine
+import Data
 
 extension GIDSignIn: GoogleSignInType {
+    
+    public static var isLogin: PassthroughSubject = PassthroughSubject<Bool, Never>()
+    
     public static func config() {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = GIDSignIn.sharedInstance()
@@ -33,6 +38,7 @@ extension GIDSignIn: GoogleSignInType {
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
+            GIDSignIn.isLogin.send(false)
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
@@ -50,8 +56,19 @@ extension GIDSignIn: GIDSignInDelegate {
           guard let authentication = user.authentication else { return }
           let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                             accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { (authResult, error) in
+        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+            guard let self = self else { return }
+            GIDSignIn.isLogin.send(true)
             print(authResult)
+            
+//            let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
+//            let entity = Profile(context: coreDataProvider.context)
+//            entity.userID = authResult?.user.uid
+//            coreDataProvider.save(entity).sink { (error) in
+//                print(error)
+//            } receiveValue: { (profile) in
+//                print(profile)
+//            }
         }
     }
     

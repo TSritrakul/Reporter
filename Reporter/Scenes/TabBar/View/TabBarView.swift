@@ -15,7 +15,7 @@ struct TabBarView: View {
     var body: some View {
         TabView(selection: $selectedView,
                 content:  {
-                    SignInView()
+                    Text("Summary")
                         .tabItem { Text("Summary") }
                         .tag(1)
                     Text("Transaction")

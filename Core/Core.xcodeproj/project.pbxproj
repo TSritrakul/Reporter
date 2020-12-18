@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EB7A83B258CDBD300336243 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A83A258CDBD300336243 /* SceneType.swift */; };
+		0EB7A83F258CDBFF00336243 /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A83E258CDBFF00336243 /* SceneTransitionType.swift */; };
+		0EB7A843258CDC2100336243 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A842258CDC2100336243 /* SceneCoordinator.swift */; };
 		0ECBC3A82583776A00DF612E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC39E2583776900DF612E /* Core.framework */; };
 		0ECBC3AD2583776A00DF612E /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBC3AC2583776A00DF612E /* CoreTests.swift */; };
 		0ECBC3AF2583776A00DF612E /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECBC3A12583776900DF612E /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EB7A83A258CDBD300336243 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
+		0EB7A83E258CDBFF00336243 /* SceneTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
+		0EB7A842258CDC2100336243 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		0ECBC39E2583776900DF612E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECBC3A12583776900DF612E /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		0ECBC3A22583776900DF612E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 		0ECBC3A02583776900DF612E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0EE757C3258BC694002A5EFE /* Navigations */,
 				0ECBC3A12583776900DF612E /* Core.h */,
 				0ECBC3A22583776900DF612E /* Info.plist */,
 			);
@@ -91,6 +98,16 @@
 				0ECBC3AE2583776A00DF612E /* Info.plist */,
 			);
 			path = CoreTests;
+			sourceTree = "<group>";
+		};
+		0EE757C3258BC694002A5EFE /* Navigations */ = {
+			isa = PBXGroup;
+			children = (
+				0EB7A83A258CDBD300336243 /* SceneType.swift */,
+				0EB7A83E258CDBFF00336243 /* SceneTransitionType.swift */,
+				0EB7A842258CDC2100336243 /* SceneCoordinator.swift */,
+			);
+			path = Navigations;
 			sourceTree = "<group>";
 		};
 		614B7C1D8EE5F79AA6B41528 /* Frameworks */ = {
@@ -173,6 +190,7 @@
 				TargetAttributes = {
 					0ECBC39D2583776900DF612E = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					0ECBC3A62583776A00DF612E = {
 						CreatedOnToolsVersion = 12.2;
@@ -245,6 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB7A843258CDC2100336243 /* SceneCoordinator.swift in Sources */,
+				0EB7A83B258CDBD300336243 /* SceneType.swift in Sources */,
+				0EB7A83F258CDBFF00336243 /* SceneTransitionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 60E1BDD1CAFB755F8DBE0605 /* Pods-Core.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -410,6 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rolland.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -419,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 866B931AF12BA7E89CF0F623 /* Pods-Core.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -444,6 +468,7 @@
 		0ECBC3B62583776A00DF612E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = CoreTests/Info.plist;
@@ -462,6 +487,7 @@
 		0ECBC3B72583776A00DF612E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = CoreTests/Info.plist;

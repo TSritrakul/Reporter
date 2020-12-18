@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 public protocol GoogleSignInType {
     static func signIn()
     static func signOut()
     static func config()
+    static var isLogin: PassthroughSubject<Bool, Never> { get }
 }

@@ -8,22 +8,30 @@
 import SwiftUI
 
 public struct SignInView: View {
-    public init() {}
+    
+    @ObservedObject public var viewModel: SignInViewModel
+    
+    public init(viewModel: SignInViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
         VStack {
-            Button("SignIn with Google") {
-                GoogleSignInManager.shared.signIn()
-            }
-            Button("LogOut") {
-                GoogleSignInManager.shared.signOut()
+            if self.viewModel.isLogin {
+                Button("LogOut") {
+                    GoogleSignInManager.shared.signOut()
+                }
+            } else {
+                Button("SignIn with Google") {
+                    GoogleSignInManager.shared.signIn()
+                }
             }
         }
     }
 }
 
-struct SignInView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView()
-    }
-}
+//struct SignInView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SignInView(viewModel: SignInViewModel(opener: <#(AuthenticationOpener) -> Future<Void, Never>#>))
+//    }
+//}

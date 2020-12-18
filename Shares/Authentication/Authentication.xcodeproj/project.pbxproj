@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0E41158A258919E800481F5C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E411589258919E800481F5C /* SignInView.swift */; };
+		0EB7A848258CE40E00336243 /* AuthenticationOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7A847258CE40E00336243 /* AuthenticationOpener.swift */; };
+		0EE757B2258BB6F0002A5EFE /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE757B1258BB6F0002A5EFE /* SignInViewModel.swift */; };
+		0EE757B8258BBF34002A5EFE /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE757B7258BBF34002A5EFE /* Data.framework */; };
 		0EEB98A02587B798000CAE13 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EEB98962587B798000CAE13 /* Authentication.framework */; };
 		0EEB98A52587B798000CAE13 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98A42587B798000CAE13 /* AuthenticationTests.swift */; };
 		0EEB98A72587B798000CAE13 /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EEB98992587B798000CAE13 /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		0E411589258919E800481F5C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		0EB7A847258CE40E00336243 /* AuthenticationOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationOpener.swift; sourceTree = "<group>"; };
+		0EE757B1258BB6F0002A5EFE /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		0EE757B7258BBF34002A5EFE /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEB98962587B798000CAE13 /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EEB98992587B798000CAE13 /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		0EEB989A2587B798000CAE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE757B8258BBF34002A5EFE /* Data.framework in Frameworks */,
 				A030FAA2969A39651763230E /* libPods-Authentication.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				0EAC459D258A55E000657C6F /* View */,
+				0EE757B0258BB6DD002A5EFE /* ViewModel */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -83,6 +91,22 @@
 				0E411589258919E800481F5C /* SignInView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0EB7A846258CE3D400336243 /* Opener */ = {
+			isa = PBXGroup;
+			children = (
+				0EB7A847258CE40E00336243 /* AuthenticationOpener.swift */,
+			);
+			path = Opener;
+			sourceTree = "<group>";
+		};
+		0EE757B0258BB6DD002A5EFE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EE757B1258BB6F0002A5EFE /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0EEB988C2587B798000CAE13 = {
@@ -110,6 +134,7 @@
 			children = (
 				0E4115872589195500481F5C /* Scenes */,
 				0EEB98C92587B84D000CAE13 /* Manager */,
+				0EB7A846258CE3D400336243 /* Opener */,
 				0EEB98992587B798000CAE13 /* Authentication.h */,
 				0EEB989A2587B798000CAE13 /* Info.plist */,
 			);
@@ -155,6 +180,7 @@
 		C598DF36599F9D4090C89B6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EE757B7258BBF34002A5EFE /* Data.framework */,
 				DECFEE426A34B8435F7622EF /* libPods-Authentication.a */,
 			);
 			name = Frameworks;
@@ -295,9 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE757B2258BB6F0002A5EFE /* SignInViewModel.swift in Sources */,
 				0E41158A258919E800481F5C /* SignInView.swift in Sources */,
 				0EEB98D02587B8A2000CAE13 /* GoogleSignInType.swift in Sources */,
 				0EEB98CC2587B89A000CAE13 /* GoogleSignInManager.swift in Sources */,
+				0EB7A848258CE40E00336243 /* AuthenticationOpener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
