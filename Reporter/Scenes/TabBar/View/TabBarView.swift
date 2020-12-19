@@ -22,7 +22,7 @@ struct TabBarView: View {
                         .tabItem { Text("Transaction") }
                         .tag(2)
                         .onAppear {
-                            AuthenticationManager.shared.signOut()
+//                            AuthenticationManager.shared.signOut()
 //                            self.viewModel.fetchData()
                         }
                 })

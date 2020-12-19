@@ -20,6 +20,11 @@ target 'Reporter' do
 
 end
 
+target 'Transaction' do
+  project 'Features/Transaction/Transaction'
+
+end
+
 target 'Authentication' do
   project 'Shares/Authentication/Authentication'
 
