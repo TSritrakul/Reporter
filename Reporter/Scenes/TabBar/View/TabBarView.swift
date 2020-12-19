@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Authentication
+import Transaction
 
 struct TabBarView: View {
     @ObservedObject public var viewModel: TabBarViewModel
@@ -18,7 +19,7 @@ struct TabBarView: View {
                     Text("Summary")
                         .tabItem { Text("Summary") }
                         .tag(1)
-                    Text("Transaction")
+                    TransactionView(viewModel: TransactionViewModel())
                         .tabItem { Text("Transaction") }
                         .tag(2)
                         .onAppear {

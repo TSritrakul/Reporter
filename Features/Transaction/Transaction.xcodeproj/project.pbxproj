@@ -10,6 +10,10 @@
 		0EC94657258DA32C00936B84 /* Transaction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC9464D258DA32C00936B84 /* Transaction.framework */; };
 		0EC9465C258DA32C00936B84 /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9465B258DA32C00936B84 /* TransactionTests.swift */; };
 		0EC9465E258DA32C00936B84 /* Transaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EC94650258DA32C00936B84 /* Transaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EC9468B258DA5C700936B84 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9468A258DA5C700936B84 /* TransactionView.swift */; };
+		0EC9468F258DA5D200936B84 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9468E258DA5D200936B84 /* TransactionViewModel.swift */; };
+		0EC94693258DA5EB00936B84 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC94692258DA5EB00936B84 /* AddTransactionView.swift */; };
+		0EC94697258DA5FD00936B84 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC94696258DA5FD00936B84 /* AddTransactionViewModel.swift */; };
 		92B6EDA9D20B0D6CB3822F3F /* libPods-Transaction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A885A7B078E3BC4E4BEF2F /* libPods-Transaction.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +35,10 @@
 		0EC94656258DA32C00936B84 /* TransactionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC9465B258DA32C00936B84 /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
 		0EC9465D258DA32C00936B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EC9468A258DA5C700936B84 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		0EC9468E258DA5D200936B84 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		0EC94692258DA5EB00936B84 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		0EC94696258DA5FD00936B84 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
 		82307AF8674AD9D9CBD20396 /* Pods-Transaction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transaction.release.xcconfig"; path = "Target Support Files/Pods-Transaction/Pods-Transaction.release.xcconfig"; sourceTree = "<group>"; };
 		E44425844D2985359855B649 /* Pods-Transaction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transaction.debug.xcconfig"; path = "Target Support Files/Pods-Transaction/Pods-Transaction.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +86,7 @@
 		0EC9464F258DA32C00936B84 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				0EC94683258DA56700936B84 /* Scenes */,
 				0EC94650258DA32C00936B84 /* Transaction.h */,
 				0EC94651258DA32C00936B84 /* Info.plist */,
 			);
@@ -91,6 +100,65 @@
 				0EC9465D258DA32C00936B84 /* Info.plist */,
 			);
 			path = TransactionTests;
+			sourceTree = "<group>";
+		};
+		0EC94683258DA56700936B84 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0EC94685258DA57F00936B84 /* AddTransaction */,
+				0EC94684258DA57400936B84 /* Transaction */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0EC94684258DA57400936B84 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				0EC94687258DA5A200936B84 /* View */,
+				0EC94686258DA59900936B84 /* ViewModel */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		0EC94685258DA57F00936B84 /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				0EC94689258DA5B500936B84 /* View */,
+				0EC94688258DA5AF00936B84 /* ViewModel */,
+			);
+			path = AddTransaction;
+			sourceTree = "<group>";
+		};
+		0EC94686258DA59900936B84 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EC9468E258DA5D200936B84 /* TransactionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EC94687258DA5A200936B84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EC9468A258DA5C700936B84 /* TransactionView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0EC94688258DA5AF00936B84 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EC94696258DA5FD00936B84 /* AddTransactionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EC94689258DA5B500936B84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EC94692258DA5EB00936B84 /* AddTransactionView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6683574451CB0F4C320DFA65 /* Pods */ = {
@@ -173,6 +241,7 @@
 				TargetAttributes = {
 					0EC9464C258DA32C00936B84 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					0EC94655258DA32C00936B84 = {
 						CreatedOnToolsVersion = 12.2;
@@ -245,6 +314,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC94693258DA5EB00936B84 /* AddTransactionView.swift in Sources */,
+				0EC9468B258DA5C700936B84 /* TransactionView.swift in Sources */,
+				0EC9468F258DA5D200936B84 /* TransactionViewModel.swift in Sources */,
+				0EC94697258DA5FD00936B84 /* AddTransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E44425844D2985359855B649 /* Pods-Transaction.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -401,6 +475,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Transaction/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +484,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rolland.Transaction;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 82307AF8674AD9D9CBD20396 /* Pods-Transaction.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
@@ -426,6 +503,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Transaction/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,6 +520,7 @@
 		0EC94665258DA32C00936B84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = TransactionTests/Info.plist;
@@ -460,6 +539,7 @@
 		0EC94666258DA32C00936B84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KZ85HFXP47;
 				INFOPLIST_FILE = TransactionTests/Info.plist;
