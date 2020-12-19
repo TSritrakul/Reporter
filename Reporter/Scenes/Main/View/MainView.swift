@@ -15,7 +15,7 @@ struct MainView: View {
         if self.viewModel.isLogin {
             TabBarView(viewModel: TabBarViewModel())
         } else {
-            SignInViewRepresentable()
+            AuthenticationScene.view(.signInView)()
         }
     }
 }
@@ -23,15 +23,5 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(viewModel: MainViewModel())
-    }
-}
-
-struct SignInViewRepresentable: UIViewControllerRepresentable {
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SignInViewRepresentable>) -> UIViewController {
-        return AuthenticationScene.viewController(.signInView)()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<SignInViewRepresentable>) {
     }
 }

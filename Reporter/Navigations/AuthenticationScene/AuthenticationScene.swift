@@ -16,6 +16,14 @@ enum AuthenticationScene {
 }
 
 extension AuthenticationScene: SceneType {
+    func view() -> AnyView {
+        switch self {
+        case .signInView:
+            let viewModel: SignInViewModel = SignInViewModel(opener: self.opener())
+            return AnyView(SignInView(viewModel: viewModel))
+        }
+    }
+    
     func viewController() -> UIViewController {
         switch self {
         case .signInView:

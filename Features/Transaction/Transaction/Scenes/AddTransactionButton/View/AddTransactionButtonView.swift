@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct AddTransactionButtonView: View {
-    @ObservedObject public var viewModel: TransactionViewModel
+public struct AddTransactionButtonView: View {
+    @ObservedObject public var viewModel: AddTransactionButtonViewModel
     
-    var body: some View {
+    public init(viewModel: AddTransactionButtonViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    public var body: some View {
         VStack {
             Spacer()
             HStack {
@@ -28,9 +32,3 @@ struct AddTransactionButtonView: View {
         }
     }
 }
-
-//struct AddTransactionButtonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddTransactionButtonView()
-//    }
-//}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AddTransactionButtonViewModel: ObservableObject {
+public class AddTransactionButtonViewModel: ObservableObject {
     private let opener: ((TransactionOpener) -> Void)?
     
     public init(opener: ((TransactionOpener) -> Void)?) {

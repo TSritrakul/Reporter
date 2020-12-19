@@ -14,6 +14,14 @@ enum ReporterScene {
 }
 
 extension ReporterScene: SceneType {
+    func view() -> AnyView {
+        switch self {
+        case .tabBarView:
+            let viewModel: TabBarViewModel = TabBarViewModel()
+            return AnyView(TabBarView(viewModel: viewModel))
+        }
+    }
+    
     func viewController() -> UIViewController {
         switch self {
         case .tabBarView:

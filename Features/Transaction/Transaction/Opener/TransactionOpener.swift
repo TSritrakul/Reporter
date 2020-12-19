@@ -9,4 +9,5 @@ import Foundation
 
 public enum TransactionOpener {
     case addTransaction
+    case dismiss
 }

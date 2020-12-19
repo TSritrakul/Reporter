@@ -19,16 +19,15 @@ struct TabBarView: View {
                     Text("Summary")
                         .tabItem { Text("Summary") }
                         .tag(1)
-                    TransactionViewRepresentable()
+                    TransactionScene.view(.transaction)()
                         .tabItem { Text("Transaction") }
                         .tag(2)
-                        .onAppear {
-//                            AuthenticationManager.shared.signOut()
-//                            self.viewModel.fetchData()
-                        }
                     Text("Setting")
                         .tabItem { Text("Setting") }
                         .tag(3)
+                        .onAppear {
+                            AuthenticationManager.shared.signOut()
+                        }
                 })
     }
 }
@@ -36,15 +35,5 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView(viewModel: TabBarViewModel())
-    }
-}
-
-struct TransactionViewRepresentable: UIViewControllerRepresentable {
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<TransactionViewRepresentable>) -> UIViewController {
-        return TransactionScene.viewController(.transaction)()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<TransactionViewRepresentable>) {
     }
 }

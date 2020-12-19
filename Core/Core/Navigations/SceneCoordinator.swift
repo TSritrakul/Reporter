@@ -46,6 +46,10 @@ public class SceneCoordinator: SceneCoordinatorType {
             case .modal(scene: let scene, animated: let animated):
                 let viewController = scene.viewController()
                 self.topViewController.present(viewController, animated: animated, completion: nil)
+                break
+            case .dismiss(animated: let animated):
+                self.topViewController.dismiss(animated: animated, completion: nil)
+                break
             }
         }
     }

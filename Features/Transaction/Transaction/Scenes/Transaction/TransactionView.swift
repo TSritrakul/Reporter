@@ -21,16 +21,10 @@ public struct TransactionView: View {
                     .onTapGesture {
                         print("Touch")
                     }
-                AddTransactionButtonView(viewModel: TransactionViewModel(opener: self.viewModel.opener))
+                AddTransactionButtonView(viewModel: AddTransactionButtonViewModel(opener: self.viewModel.opener))
             }
             .navigationBarTitle("Transaction")
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
-
-//struct TransactionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TransactionView(viewModel: TransactionViewModel())
-//    }
-//}

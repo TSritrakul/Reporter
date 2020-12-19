@@ -54,18 +54,12 @@ public struct AddTransactionView: View {
                 }
             }
             .navigationBarTitle("Add Transaction", displayMode: .inline)
-            .navigationBarItems(leading: Button("Cancel",action: {
-                
+            .navigationBarItems(leading: Button("Cancel", action: {
+                self.viewModel.selectedCancelButton()
             }), trailing: Button("Save", action: {
                 
             }))
         }
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-struct AddTransactionView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddTransactionView(viewModel: AddTransactionViewModel())
     }
 }

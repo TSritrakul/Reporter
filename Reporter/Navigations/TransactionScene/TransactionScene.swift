@@ -16,6 +16,17 @@ enum TransactionScene {
 }
 
 extension TransactionScene: SceneType {
+    func view() -> AnyView {
+        switch self {
+        case .transaction:
+            let viewModel: TransactionViewModel = TransactionViewModel(opener: self.opener())
+            return AnyView(TransactionView(viewModel: viewModel))
+        case .addTransaction:
+            let viewModel: AddTransactionViewModel = AddTransactionViewModel(opener: self.opener())
+            return AnyView(AddTransactionView(viewModel: viewModel))
+        }
+    }
+    
     func viewController() -> UIViewController {
         switch self {
         case .transaction:
@@ -23,7 +34,7 @@ extension TransactionScene: SceneType {
             let viewController: UIViewController = UIHostingController(rootView: TransactionView(viewModel: viewModel))
             return viewController
         case .addTransaction:
-            let viewModel: AddTransactionViewModel = AddTransactionViewModel()
+            let viewModel: AddTransactionViewModel = AddTransactionViewModel(opener: self.opener())
             let viewController: UIViewController = UIHostingController(rootView: AddTransactionView(viewModel: viewModel))
             return viewController
         }
@@ -55,6 +66,10 @@ extension TransactionScene {
             case .addTransaction:
                 let scene: SceneType = TransactionScene.addTransaction
                 let transition: SceneTransitionType = .modal(scene: scene, animated: true)
+                let coordinator: SceneCoordinator = SceneCoordinator()
+                coordinator.transition(type: transition)
+            case .dismiss:
+                let transition: SceneTransitionType = .dismiss(animated: true)
                 let coordinator: SceneCoordinator = SceneCoordinator()
                 coordinator.transition(type: transition)
             }

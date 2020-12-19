@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 public class AddTransactionViewModel: ObservableObject {
+    private var subscriptions = Set<AnyCancellable>()
+    
     @Published var symbol: String = ""
     @Published var action: String = "Buy"
     @Published var date: Date = Date()
@@ -15,5 +18,17 @@ public class AddTransactionViewModel: ObservableObject {
     @Published var size: String = ""
     @Published var commission: String = ""
     
-    public init() {}
+    public let opener: ((TransactionOpener) -> Void)?
+    
+    public init(opener: ((TransactionOpener) -> Void)?) {
+        self.opener = opener
+    }
+    
+    func selectedCancelButton() {
+        self.opener?(.dismiss)
+    }
+    
+    func selectedSaveButton() {
+        
+    }
 }

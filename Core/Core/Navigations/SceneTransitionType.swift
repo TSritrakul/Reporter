@@ -16,6 +16,6 @@ public enum SceneTransitionType {
 //    case modalNoNav(scene: SceneType, animated: Bool)
 //    case dialog(scene: SceneType, animated: Bool, presentationStyle: UIModalPresentationStyle? = .overCurrentContext)
 //    case pop(animated: Bool)
-//    case dismiss(animated: Bool)
+    case dismiss(animated: Bool)
 //    case switchTabbar(index: Int)
 }
