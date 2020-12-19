@@ -8,6 +8,9 @@
 import Foundation
 
 public class TransactionViewModel: ObservableObject {
+    private let opener: ((TransactionOpener) -> Void)?
     
-    public init() {}
+    public init(opener: ((TransactionOpener) -> Void)?) {
+        self.opener = opener
+    }
 }

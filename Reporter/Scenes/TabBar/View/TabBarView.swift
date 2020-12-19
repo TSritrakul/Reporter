@@ -19,7 +19,7 @@ struct TabBarView: View {
                     Text("Summary")
                         .tabItem { Text("Summary") }
                         .tag(1)
-                    TransactionView(viewModel: TransactionViewModel())
+                    TransactionViewRepresentable()
                         .tabItem { Text("Transaction") }
                         .tag(2)
                         .onAppear {
@@ -33,5 +33,15 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView(viewModel: TabBarViewModel())
+    }
+}
+
+struct TransactionViewRepresentable: UIViewControllerRepresentable {
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<TransactionViewRepresentable>) -> UIViewController {
+        return TransactionScene.viewController(.transaction)()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<TransactionViewRepresentable>) {
     }
 }

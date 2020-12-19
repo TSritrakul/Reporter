@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AddTransactionViewModel: ObservableObject {
+public class AddTransactionViewModel: ObservableObject {
     
-    init() {}
+    public init() {}
 }

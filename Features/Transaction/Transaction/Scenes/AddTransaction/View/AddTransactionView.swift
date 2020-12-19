@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct AddTransactionView: View {
+public struct AddTransactionView: View {
     @ObservedObject public var viewModel: AddTransactionViewModel
     
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    public init(viewModel: AddTransactionViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    public var body: some View {
+        Text("Add Transaction")
     }
 }
 

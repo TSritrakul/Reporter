@@ -43,6 +43,9 @@ public class SceneCoordinator: SceneCoordinatorType {
                 self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
                 break
+            case .modal(scene: let scene, animated: let animated):
+                let viewController = scene.viewController()
+                self.topViewController.present(viewController, animated: animated, completion: nil)
             }
         }
     }
