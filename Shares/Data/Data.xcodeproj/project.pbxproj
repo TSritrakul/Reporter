@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		095F1D225CAD40287C48D5DE /* libPods-Data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8ADC7C5160A8F58934E601 /* libPods-Data.a */; };
+		0E6FB7D4258E623F009AD36E /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FB7D2258E623F009AD36E /* Transactions+CoreDataClass.swift */; };
+		0E6FB7D5258E623F009AD36E /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FB7D3258E623F009AD36E /* Transactions+CoreDataProperties.swift */; };
 		0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */; };
 		0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC4590258A558C00657C6F /* Data.xcdatamodeld */; };
 		0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC45A1258A585700657C6F /* CoreDataProvider.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E6FB7D2258E623F009AD36E /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0E6FB7D3258E623F009AD36E /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0EAC4591258A558C00657C6F /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		0EAC45A1258A585700657C6F /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E6FB7D1258E6203009AD36E /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				0E6FB7D2258E623F009AD36E /* Transactions+CoreDataClass.swift */,
+				0E6FB7D3258E623F009AD36E /* Transactions+CoreDataProperties.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
 		0EAC458A258A4F8500657C6F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 		0EE757A4258BB0CA002A5EFE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				0E6FB7D1258E6203009AD36E /* Transactions */,
 				0EE757AD258BB166002A5EFE /* Profile */,
 			);
 			path = Entities;
@@ -313,10 +327,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6FB7D4258E623F009AD36E /* Transactions+CoreDataClass.swift in Sources */,
 				0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */,
 				0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */,
 				0EE757A8258BB15D002A5EFE /* Profile+CoreDataProperties.swift in Sources */,
 				0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */,
+				0E6FB7D5258E623F009AD36E /* Transactions+CoreDataProperties.swift in Sources */,
 				0EE757A7258BB15D002A5EFE /* Profile+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
