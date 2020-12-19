@@ -15,6 +15,8 @@
 		0EC94693258DA5EB00936B84 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC94692258DA5EB00936B84 /* AddTransactionView.swift */; };
 		0EC94697258DA5FD00936B84 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC94696258DA5FD00936B84 /* AddTransactionViewModel.swift */; };
 		0EC946A5258DA84F00936B84 /* TransactionOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC946A4258DA84F00936B84 /* TransactionOpener.swift */; };
+		0EC94778258DC47800936B84 /* AddTransactionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC94777258DC47800936B84 /* AddTransactionButtonView.swift */; };
+		0EC9477E258DC4D100936B84 /* AddTransactionButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9477D258DC4D100936B84 /* AddTransactionButtonViewModel.swift */; };
 		92B6EDA9D20B0D6CB3822F3F /* libPods-Transaction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A885A7B078E3BC4E4BEF2F /* libPods-Transaction.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		0EC94692258DA5EB00936B84 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		0EC94696258DA5FD00936B84 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
 		0EC946A4258DA84F00936B84 /* TransactionOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionOpener.swift; sourceTree = "<group>"; };
+		0EC94777258DC47800936B84 /* AddTransactionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionButtonView.swift; sourceTree = "<group>"; };
+		0EC9477D258DC4D100936B84 /* AddTransactionButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionButtonViewModel.swift; sourceTree = "<group>"; };
 		82307AF8674AD9D9CBD20396 /* Pods-Transaction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transaction.release.xcconfig"; path = "Target Support Files/Pods-Transaction/Pods-Transaction.release.xcconfig"; sourceTree = "<group>"; };
 		E44425844D2985359855B649 /* Pods-Transaction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transaction.debug.xcconfig"; path = "Target Support Files/Pods-Transaction/Pods-Transaction.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +112,7 @@
 		0EC94683258DA56700936B84 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0EC94776258DC46300936B84 /* AddTransactionButton */,
 				0EC94685258DA57F00936B84 /* AddTransaction */,
 				0EC94684258DA57400936B84 /* Transaction */,
 			);
@@ -170,6 +175,31 @@
 				0EC946A4258DA84F00936B84 /* TransactionOpener.swift */,
 			);
 			path = Opener;
+			sourceTree = "<group>";
+		};
+		0EC94776258DC46300936B84 /* AddTransactionButton */ = {
+			isa = PBXGroup;
+			children = (
+				0EC9477B258DC48400936B84 /* View */,
+				0EC9477C258DC4B400936B84 /* ViewModel */,
+			);
+			path = AddTransactionButton;
+			sourceTree = "<group>";
+		};
+		0EC9477B258DC48400936B84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EC94777258DC47800936B84 /* AddTransactionButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EC9477C258DC4B400936B84 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EC9477D258DC4D100936B84 /* AddTransactionButtonViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		6683574451CB0F4C320DFA65 /* Pods */ = {
@@ -325,7 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC9477E258DC4D100936B84 /* AddTransactionButtonViewModel.swift in Sources */,
 				0EC94693258DA5EB00936B84 /* AddTransactionView.swift in Sources */,
+				0EC94778258DC47800936B84 /* AddTransactionButtonView.swift in Sources */,
 				0EC9468B258DA5C700936B84 /* TransactionView.swift in Sources */,
 				0EC9468F258DA5D200936B84 /* TransactionViewModel.swift in Sources */,
 				0EC94697258DA5FD00936B84 /* AddTransactionViewModel.swift in Sources */,

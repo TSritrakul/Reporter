@@ -21,21 +21,11 @@ public struct TransactionView: View {
                     .onTapGesture {
                         print("Touch")
                     }
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Circle()
-                            .fill(Color.yellow)
-                            .shadow(radius: 5)
-                            .frame(width: 60, height: 60, alignment: .center)
-                        Spacer().frame(width: 20)
-                    }
-                    Spacer().frame(height: 20)
-                }
+                AddTransactionButtonView(viewModel: TransactionViewModel(opener: self.viewModel.opener))
             }
             .navigationBarTitle("Transaction")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

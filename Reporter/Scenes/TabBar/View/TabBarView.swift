@@ -26,6 +26,9 @@ struct TabBarView: View {
 //                            AuthenticationManager.shared.signOut()
 //                            self.viewModel.fetchData()
                         }
+                    Text("Setting")
+                        .tabItem { Text("Setting") }
+                        .tag(3)
                 })
     }
 }
