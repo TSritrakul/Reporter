@@ -71,15 +71,7 @@ extension GIDSignIn: GIDSignInDelegate {
           let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                             accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { (authResult, error) in
-            
-//            let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
-//            let entity = Profile(context: coreDataProvider.context)
-//            entity.userID = authResult?.user.uid
-//            coreDataProvider.save(entity).sink { (error) in
-//                print(error)
-//            } receiveValue: { (profile) in
-//                print(profile)
-//            }
+        
         }
     }
     

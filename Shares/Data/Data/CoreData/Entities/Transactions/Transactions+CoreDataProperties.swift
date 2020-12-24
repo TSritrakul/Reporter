@@ -22,7 +22,8 @@ extension Transactions {
     @NSManaged public var price: String?
     @NSManaged public var size: String?
     @NSManaged public var commission: String?
-
+    @NSManaged public var id: UUID?
+    @NSManaged public var note: String?
 }
 
 extension Transactions : Identifiable {

@@ -20,6 +20,7 @@ public struct AddTransactionView: View {
                 List {
                     HStack {
                         Text("Symbol")
+                            .font(.title)
                         TextField("Input Symbol", text: self.$viewModel.symbol)
                             .multilineTextAlignment(.trailing)
                     }
@@ -51,13 +52,19 @@ public struct AddTransactionView: View {
                             .disableAutocorrection(true)
                             .multilineTextAlignment(.trailing)
                     }
+                    HStack {
+                        Text("Note")
+                        TextField("Input Note", text: self.$viewModel.note)
+                            .disableAutocorrection(true)
+                            .multilineTextAlignment(.trailing)
+                    }
                 }
             }
             .navigationBarTitle("Add Transaction", displayMode: .inline)
             .navigationBarItems(leading: Button("Cancel", action: {
                 self.viewModel.selectedCancelButton()
             }), trailing: Button("Save", action: {
-                
+                self.viewModel.selectedSaveButton()
             }))
         }
         .navigationViewStyle(StackNavigationViewStyle())

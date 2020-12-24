@@ -25,27 +25,25 @@ public class CoreDataProvider<T: NSManagedObject> {
     }
     
     @discardableResult
-    public func save(_ data: T) -> AnyPublisher<T, CoreDataProviderError> {
+    public func save(_ data: T) -> AnyPublisher<[T], CoreDataProviderError> {
         if self.context.hasChanges {
             do {
                 try self.context.save()
                 
             } catch {
-                return Fail<T, CoreDataProviderError>(error: .saveError)
+                return Fail<[T], CoreDataProviderError>(error: .saveError)
                     .eraseToAnyPublisher()
             }
         }
         return self.fetch(T.self)
     }
     
-    public func fetch(_ type: T.Type) -> AnyPublisher<T, CoreDataProviderError> {
+    public func fetch(_ type: T.Type) -> AnyPublisher<[T], CoreDataProviderError> {
         return Future { (promise) in
             let request = NSFetchRequest<T>(entityName: String(describing: type))
             do {
                 let object = try self.context.fetch(request)
-                if let lastObject = object.last {
-                    promise(.success(lastObject))
-                }
+                promise(.success(object))
             } catch {
                 promise(.failure(.fetchError))
             }
