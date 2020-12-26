@@ -19,7 +19,7 @@ final class CoreDataManager {
         let modelURL = Bundle(identifier: "com.rolland.Data")?.url(forResource: "Data", withExtension: "momd")
         let managedObjectModel =  NSManagedObjectModel(contentsOf: modelURL!)
         
-        let container = NSPersistentContainer(name: "CoreData", managedObjectModel: managedObjectModel!)
+        let container = NSPersistentContainer(name: "Data", managedObjectModel: managedObjectModel!)
         container.loadPersistentStores { (storeDescription, error) in
             
             if let err = error {
