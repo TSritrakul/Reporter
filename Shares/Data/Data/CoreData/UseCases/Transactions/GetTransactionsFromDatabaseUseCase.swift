@@ -13,11 +13,11 @@ public enum GetTransactionsError: Error {
     case notFoundElement
 }
 
-public protocol GetTransactionsUseCase {
+public protocol GetTransactionsFromDatabaseUseCase {
     func execute() -> AnyPublisher<[TransactionsModel], GetTransactionsError>
 }
 
-public class GetTransactionsUseCaseImpl: GetTransactionsUseCase {
+public class GetTransactionsFromDatabaseUseCaseImpl: GetTransactionsFromDatabaseUseCase {
     public init() {}
     
     public func execute() -> AnyPublisher<[TransactionsModel], GetTransactionsError> {

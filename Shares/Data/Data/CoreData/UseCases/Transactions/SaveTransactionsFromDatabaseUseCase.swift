@@ -17,11 +17,11 @@ public enum SaveTransactionsError: Error {
     case weakSelfError
 }
 
-public protocol SaveTransactionsUseCase {
+public protocol SaveTransactionsFromDatabaseUseCase {
     func execute(transaction: TransactionsModel) -> AnyPublisher<Void, SaveTransactionsError>
 }
 
-public class SaveTransactionsUseCaseImpl: SaveTransactionsUseCase {
+public class SaveTransactionsFromDatabaseUseCaseImpl: SaveTransactionsFromDatabaseUseCase {
     public init() {}
     
     public func execute(transaction: TransactionsModel) -> AnyPublisher<Void, SaveTransactionsError> {

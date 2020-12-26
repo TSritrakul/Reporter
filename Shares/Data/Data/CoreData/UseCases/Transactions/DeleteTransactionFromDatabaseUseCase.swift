@@ -14,11 +14,11 @@ public enum DeleteTransactionError: Error {
     case notFoundElement
 }
 
-public protocol DeleteTransactionUseCase {
+public protocol DeleteTransactionFromDatabaseUseCase {
     func execute(transaction: TransactionsModel) -> AnyPublisher<Void, DeleteTransactionError>
 }
 
-public class DeleteTransactionUseCaseImpl: DeleteTransactionUseCase {
+public class DeleteTransactionFromDatabaseUseCaseImpl: DeleteTransactionFromDatabaseUseCase {
     public init() {}
     
     public func execute(transaction: TransactionsModel) -> AnyPublisher<Void, DeleteTransactionError> {

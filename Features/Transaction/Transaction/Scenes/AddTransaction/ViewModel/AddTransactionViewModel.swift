@@ -21,16 +21,16 @@ public class AddTransactionViewModel: ObservableObject {
     @Published var commission: String = ""
     @Published var note: String = ""
     
-    private let saveTransactionsUseCase: SaveTransactionsUseCase
+    private let saveTransactionsFromDatabaseUseCase: SaveTransactionsFromDatabaseUseCase
     
     public let opener: ((TransactionOpener) -> Void)?
     public let reloadTransactionsData: CurrentValueSubject<Void, Never>
     
     public init(opener: ((TransactionOpener) -> Void)?,
-                saveTransactionsUseCase: SaveTransactionsUseCase = SaveTransactionsUseCaseImpl(),
+                saveTransactionsFromDatabaseUseCase: SaveTransactionsFromDatabaseUseCase = SaveTransactionsFromDatabaseUseCaseImpl(),
                 reloadTransactionsData: CurrentValueSubject<Void, Never>) {
         self.opener = opener
-        self.saveTransactionsUseCase = saveTransactionsUseCase
+        self.saveTransactionsFromDatabaseUseCase = saveTransactionsFromDatabaseUseCase
         self.reloadTransactionsData = reloadTransactionsData
     }
     
@@ -47,7 +47,7 @@ public class AddTransactionViewModel: ObservableObject {
                                                                id: UUID(),
                                                                commission: commission,
                                                                note: note)
-        self.saveTransactionsUseCase.execute(transaction: transaction)
+        self.saveTransactionsFromDatabaseUseCase.execute(transaction: transaction)
             .sink { (error) in
                 switch error {
                 case .finished:

@@ -13,12 +13,12 @@ public enum SaveProfileError: Error {
     case saveError
 }
 
-public protocol SaveProfileUseCase {
+public protocol SaveProfileFromDatabaseUseCase {
     @discardableResult
     func execute(profile: ProfileModel) -> AnyPublisher<Void, SaveProfileError>
 }
 
-public class SaveProfileUseCaseImpl: SaveProfileUseCase {
+public class SaveProfileFromDatabaseUseCaseImpl: SaveProfileFromDatabaseUseCase {
     public init() {}
     
     @discardableResult

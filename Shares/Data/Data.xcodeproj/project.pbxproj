@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		095F1D225CAD40287C48D5DE /* libPods-Data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8ADC7C5160A8F58934E601 /* libPods-Data.a */; };
-		0E2E047B2590C86A00F4A0E9 /* SaveTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E047A2590C86A00F4A0E9 /* SaveTransactionsUseCase.swift */; };
-		0E2E047F2590C87C00F4A0E9 /* GetTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E047E2590C87C00F4A0E9 /* GetTransactionsUseCase.swift */; };
-		0E484FC42594FCD500FDB46C /* SaveProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E484FC32594FCD500FDB46C /* SaveProfileUseCase.swift */; };
-		0E484FCA2595016F00FDB46C /* GetProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E484FC92595016F00FDB46C /* GetProfileUseCase.swift */; };
+		0E2E047B2590C86A00F4A0E9 /* SaveTransactionsFromDatabaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E047A2590C86A00F4A0E9 /* SaveTransactionsFromDatabaseUseCase.swift */; };
+		0E2E047F2590C87C00F4A0E9 /* GetTransactionsFromDatabaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E047E2590C87C00F4A0E9 /* GetTransactionsFromDatabaseUseCase.swift */; };
+		0E484FC42594FCD500FDB46C /* SaveProfileFromDatabaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E484FC32594FCD500FDB46C /* SaveProfileFromDatabaseUseCase.swift */; };
+		0E484FCA2595016F00FDB46C /* GetProfileFromDatabaseCoreDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E484FC92595016F00FDB46C /* GetProfileFromDatabaseCoreDataUseCase.swift */; };
 		0E6FB7D4258E623F009AD36E /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FB7D2258E623F009AD36E /* Transactions+CoreDataClass.swift */; };
 		0E6FB7D5258E623F009AD36E /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6FB7D3258E623F009AD36E /* Transactions+CoreDataProperties.swift */; };
 		0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */; };
@@ -25,7 +25,7 @@
 		0ECBC40125837A3600DF612E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC40025837A3600DF612E /* Core.framework */; };
 		0EE757A7258BB15D002A5EFE /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE757A5258BB15D002A5EFE /* Profile+CoreDataClass.swift */; };
 		0EE757A8258BB15D002A5EFE /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE757A6258BB15D002A5EFE /* Profile+CoreDataProperties.swift */; };
-		0EFF96532596EE8F0077BE4F /* DeleteTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFF96522596EE8F0077BE4F /* DeleteTransactionUseCase.swift */; };
+		0EFF96532596EE8F0077BE4F /* DeleteTransactionFromDatabaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFF96522596EE8F0077BE4F /* DeleteTransactionFromDatabaseUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E2E047A2590C86A00F4A0E9 /* SaveTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionsUseCase.swift; sourceTree = "<group>"; };
-		0E2E047E2590C87C00F4A0E9 /* GetTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsUseCase.swift; sourceTree = "<group>"; };
-		0E484FC32594FCD500FDB46C /* SaveProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProfileUseCase.swift; sourceTree = "<group>"; };
-		0E484FC92595016F00FDB46C /* GetProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileUseCase.swift; sourceTree = "<group>"; };
+		0E2E047A2590C86A00F4A0E9 /* SaveTransactionsFromDatabaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionsFromDatabaseUseCase.swift; sourceTree = "<group>"; };
+		0E2E047E2590C87C00F4A0E9 /* GetTransactionsFromDatabaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsFromDatabaseUseCase.swift; sourceTree = "<group>"; };
+		0E484FC32594FCD500FDB46C /* SaveProfileFromDatabaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProfileFromDatabaseUseCase.swift; sourceTree = "<group>"; };
+		0E484FC92595016F00FDB46C /* GetProfileFromDatabaseCoreDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileFromDatabaseCoreDataUseCase.swift; sourceTree = "<group>"; };
 		0E6FB7D2258E623F009AD36E /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E6FB7D3258E623F009AD36E /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		0ECBC40025837A3600DF612E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE757A5258BB15D002A5EFE /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0EE757A6258BB15D002A5EFE /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0EFF96522596EE8F0077BE4F /* DeleteTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionUseCase.swift; sourceTree = "<group>"; };
+		0EFF96522596EE8F0077BE4F /* DeleteTransactionFromDatabaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionFromDatabaseUseCase.swift; sourceTree = "<group>"; };
 		B3B1F4F43BD64BB94E16EFF6 /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
 		C48273ACB895E7DF03125EFC /* Pods-Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.debug.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.debug.xcconfig"; sourceTree = "<group>"; };
 		DD8ADC7C5160A8F58934E601 /* libPods-Data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,9 +98,9 @@
 		0E2E04792590C84900F4A0E9 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
-				0EFF96522596EE8F0077BE4F /* DeleteTransactionUseCase.swift */,
-				0E2E047E2590C87C00F4A0E9 /* GetTransactionsUseCase.swift */,
-				0E2E047A2590C86A00F4A0E9 /* SaveTransactionsUseCase.swift */,
+				0EFF96522596EE8F0077BE4F /* DeleteTransactionFromDatabaseUseCase.swift */,
+				0E2E047E2590C87C00F4A0E9 /* GetTransactionsFromDatabaseUseCase.swift */,
+				0E2E047A2590C86A00F4A0E9 /* SaveTransactionsFromDatabaseUseCase.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -108,8 +108,8 @@
 		0E484FC22594FC8A00FDB46C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				0E484FC32594FCD500FDB46C /* SaveProfileUseCase.swift */,
-				0E484FC92595016F00FDB46C /* GetProfileUseCase.swift */,
+				0E484FC32594FCD500FDB46C /* SaveProfileFromDatabaseUseCase.swift */,
+				0E484FC92595016F00FDB46C /* GetProfileFromDatabaseCoreDataUseCase.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -398,13 +398,13 @@
 			files = (
 				0EB7633A25962BBA00BB4230 /* ProfileModel.swift in Sources */,
 				0EB763302596239800BB4230 /* TransactionModel.swift in Sources */,
-				0E484FC42594FCD500FDB46C /* SaveProfileUseCase.swift in Sources */,
+				0E484FC42594FCD500FDB46C /* SaveProfileFromDatabaseUseCase.swift in Sources */,
 				0E6FB7D4258E623F009AD36E /* Transactions+CoreDataClass.swift in Sources */,
-				0E484FCA2595016F00FDB46C /* GetProfileUseCase.swift in Sources */,
-				0EFF96532596EE8F0077BE4F /* DeleteTransactionUseCase.swift in Sources */,
-				0E2E047B2590C86A00F4A0E9 /* SaveTransactionsUseCase.swift in Sources */,
+				0E484FCA2595016F00FDB46C /* GetProfileFromDatabaseCoreDataUseCase.swift in Sources */,
+				0EFF96532596EE8F0077BE4F /* DeleteTransactionFromDatabaseUseCase.swift in Sources */,
+				0E2E047B2590C86A00F4A0E9 /* SaveTransactionsFromDatabaseUseCase.swift in Sources */,
 				0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */,
-				0E2E047F2590C87C00F4A0E9 /* GetTransactionsUseCase.swift in Sources */,
+				0E2E047F2590C87C00F4A0E9 /* GetTransactionsFromDatabaseUseCase.swift in Sources */,
 				0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */,
 				0EE757A8258BB15D002A5EFE /* Profile+CoreDataProperties.swift in Sources */,
 				0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */,

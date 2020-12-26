@@ -16,16 +16,16 @@ public class TransactionViewModel: ObservableObject {
     
     public let opener: ((TransactionOpener) -> Void)?
     public let reloadTransactionsData: CurrentValueSubject<Void, Never>
-    private let getTransactionsUseCase: GetTransactionsUseCase
-    private let deleteTransactionsUseCase: DeleteTransactionUseCase
+    private let getTransactionsFromDatabaseUseCase: GetTransactionsFromDatabaseUseCase
+    private let deleteTransactionsFromDatabaseUseCase: DeleteTransactionFromDatabaseUseCase
     
     public init(opener: ((TransactionOpener) -> Void)?,
-                getTransactionsUseCase: GetTransactionsUseCase = GetTransactionsUseCaseImpl(),
-                deleteTransactionsUseCase: DeleteTransactionUseCase = DeleteTransactionUseCaseImpl(),
+                getTransactionsFromDatabaseUseCase: GetTransactionsFromDatabaseUseCase = GetTransactionsFromDatabaseUseCaseImpl(),
+                deleteTransactionsFromDatabaseUseCase: DeleteTransactionFromDatabaseUseCase = DeleteTransactionFromDatabaseUseCaseImpl(),
                 reloadTransactionsData: CurrentValueSubject<Void, Never> = CurrentValueSubject<Void, Never>(Void())) {
         self.opener = opener
-        self.getTransactionsUseCase = getTransactionsUseCase
-        self.deleteTransactionsUseCase = deleteTransactionsUseCase
+        self.getTransactionsFromDatabaseUseCase = getTransactionsFromDatabaseUseCase
+        self.deleteTransactionsFromDatabaseUseCase = deleteTransactionsFromDatabaseUseCase
         self.reloadTransactionsData = reloadTransactionsData
         
         self.reloadTransactionsData.sink { (_) in
@@ -34,7 +34,7 @@ public class TransactionViewModel: ObservableObject {
     }
     
     private func getTransactions() {
-        self.getTransactionsUseCase.execute().sink { (error) in
+        self.getTransactionsFromDatabaseUseCase.execute().sink { (error) in
             switch error {
             case .finished:
                 break
@@ -48,10 +48,10 @@ public class TransactionViewModel: ObservableObject {
     
     public func deleteTransaction(index: IndexSet) {
         guard let index = Array(index).first else { return }
-        self.deleteTransactionsUseCase.execute(transaction: self.transactions[index]).mapError({ (error) -> GetTransactionsError in
+        self.deleteTransactionsFromDatabaseUseCase.execute(transaction: self.transactions[index]).mapError({ (error) -> GetTransactionsError in
             return .notFoundElement
         }).flatMap { (_) -> AnyPublisher<[TransactionsModel], GetTransactionsError> in
-            return self.getTransactionsUseCase.execute()
+            return self.getTransactionsFromDatabaseUseCase.execute()
         }.sink { (error) in
             switch error {
             case .finished:
