@@ -19,6 +19,6 @@ public class AddTransactionButtonViewModel: ObservableObject {
     }
     
     public func selectedAddTransactionButton() {
-        self.opener?(.addTransaction(reloadTransactionsData: reloadTransactionsData))
+        self.opener?(.addTransaction)
     }
 }

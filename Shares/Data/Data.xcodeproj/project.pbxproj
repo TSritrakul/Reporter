@@ -17,6 +17,10 @@
 		0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */; };
 		0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC4590258A558C00657C6F /* Data.xcdatamodeld */; };
 		0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC45A1258A585700657C6F /* CoreDataProvider.swift */; };
+		0EAFCE762597837800D8A11F /* TransactionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFCE752597837800D8A11F /* TransactionsManager.swift */; };
+		0EAFCE7B2597878700D8A11F /* GetTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFCE7A2597878700D8A11F /* GetTransactionsUseCase.swift */; };
+		0EAFCE81259790DE00D8A11F /* DeleteTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFCE80259790DE00D8A11F /* DeleteTransactionUseCase.swift */; };
+		0EAFCE85259793BB00D8A11F /* SaveTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFCE84259793BB00D8A11F /* SaveTransactionUseCase.swift */; };
 		0EB763302596239800BB4230 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7632F2596239800BB4230 /* TransactionModel.swift */; };
 		0EB7633A25962BBA00BB4230 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB7633925962BBA00BB4230 /* ProfileModel.swift */; };
 		0ECBC3822583773000DF612E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC3782583772F00DF612E /* Data.framework */; };
@@ -48,6 +52,10 @@
 		0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0EAC4591258A558C00657C6F /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		0EAC45A1258A585700657C6F /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		0EAFCE752597837800D8A11F /* TransactionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsManager.swift; sourceTree = "<group>"; };
+		0EAFCE7A2597878700D8A11F /* GetTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsUseCase.swift; sourceTree = "<group>"; };
+		0EAFCE80259790DE00D8A11F /* DeleteTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionUseCase.swift; sourceTree = "<group>"; };
+		0EAFCE84259793BB00D8A11F /* SaveTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransactionUseCase.swift; sourceTree = "<group>"; };
 		0EB7632F2596239800BB4230 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		0EB7633925962BBA00BB4230 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		0ECBC3782583772F00DF612E /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +136,7 @@
 			children = (
 				0EAC4595258A559A00657C6F /* Database */,
 				0EE757A4258BB0CA002A5EFE /* Entities */,
-				0EAC4596258A55AA00657C6F /* Manager */,
+				0EAC4596258A55AA00657C6F /* Managers */,
 				0EB7632E2596237100BB4230 /* Models */,
 				0EAC45A0258A583F00657C6F /* Provider */,
 				0E2E04782590C83500F4A0E9 /* UseCases */,
@@ -144,12 +152,12 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		0EAC4596258A55AA00657C6F /* Manager */ = {
+		0EAC4596258A55AA00657C6F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				0EAC458C258A4FCA00657C6F /* CoreDataManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		0EAC45A0258A583F00657C6F /* Provider */ = {
@@ -158,6 +166,33 @@
 				0EAC45A1258A585700657C6F /* CoreDataProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		0EAFCE712597822E00D8A11F /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				0EAFCE792597876E00D8A11F /* UseCases */,
+				0EAFCE722597824400D8A11F /* Managers */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		0EAFCE722597824400D8A11F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0EAFCE752597837800D8A11F /* TransactionsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		0EAFCE792597876E00D8A11F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				0EAFCE7A2597878700D8A11F /* GetTransactionsUseCase.swift */,
+				0EAFCE80259790DE00D8A11F /* DeleteTransactionUseCase.swift */,
+				0EAFCE84259793BB00D8A11F /* SaveTransactionUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		0EB7632E2596237100BB4230 /* Models */ = {
@@ -208,6 +243,7 @@
 		0ECBC37A2583772F00DF612E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0EAFCE712597822E00D8A11F /* Transactions */,
 				0EAC458A258A4F8500657C6F /* CoreData */,
 				0ECBC37B2583772F00DF612E /* Data.h */,
 				0ECBC37C2583772F00DF612E /* Info.plist */,
@@ -401,6 +437,8 @@
 				0E484FC42594FCD500FDB46C /* SaveProfileFromDatabaseUseCase.swift in Sources */,
 				0E6FB7D4258E623F009AD36E /* Transactions+CoreDataClass.swift in Sources */,
 				0E484FCA2595016F00FDB46C /* GetProfileFromDatabaseCoreDataUseCase.swift in Sources */,
+				0EAFCE85259793BB00D8A11F /* SaveTransactionUseCase.swift in Sources */,
+				0EAFCE7B2597878700D8A11F /* GetTransactionsUseCase.swift in Sources */,
 				0EFF96532596EE8F0077BE4F /* DeleteTransactionFromDatabaseUseCase.swift in Sources */,
 				0E2E047B2590C86A00F4A0E9 /* SaveTransactionsFromDatabaseUseCase.swift in Sources */,
 				0EAC458D258A4FCA00657C6F /* CoreDataManager.swift in Sources */,
@@ -408,6 +446,8 @@
 				0EAC4592258A558C00657C6F /* Data.xcdatamodeld in Sources */,
 				0EE757A8258BB15D002A5EFE /* Profile+CoreDataProperties.swift in Sources */,
 				0EAC45A2258A585700657C6F /* CoreDataProvider.swift in Sources */,
+				0EAFCE81259790DE00D8A11F /* DeleteTransactionUseCase.swift in Sources */,
+				0EAFCE762597837800D8A11F /* TransactionsManager.swift in Sources */,
 				0E6FB7D5258E623F009AD36E /* Transactions+CoreDataProperties.swift in Sources */,
 				0EE757A7258BB15D002A5EFE /* Profile+CoreDataClass.swift in Sources */,
 			);

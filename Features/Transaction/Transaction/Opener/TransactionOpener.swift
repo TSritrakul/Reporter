@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 public enum TransactionOpener {
-    case addTransaction(reloadTransactionsData: CurrentValueSubject<Void, Never>)
+    case addTransaction
     case dismiss
 }

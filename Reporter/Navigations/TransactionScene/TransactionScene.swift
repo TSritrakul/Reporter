@@ -13,7 +13,7 @@ import Combine
 
 enum TransactionScene {
     case transaction
-    case addTransaction(reloadTransactionsData: CurrentValueSubject<Void, Never>)
+    case addTransaction
 }
 
 extension TransactionScene: SceneType {
@@ -22,9 +22,8 @@ extension TransactionScene: SceneType {
         case .transaction:
             let viewModel: TransactionViewModel = TransactionViewModel(opener: self.opener())
             return AnyView(TransactionView(viewModel: viewModel))
-        case .addTransaction(let reloadTransactionsData):
-            let viewModel: AddTransactionViewModel = AddTransactionViewModel(opener: self.opener(),
-                                                                             reloadTransactionsData: reloadTransactionsData)
+        case .addTransaction:
+            let viewModel: AddTransactionViewModel = AddTransactionViewModel(opener: self.opener())
             return AnyView(AddTransactionView(viewModel: viewModel))
         }
     }
@@ -35,9 +34,8 @@ extension TransactionScene: SceneType {
             let viewModel: TransactionViewModel = TransactionViewModel(opener: self.opener())
             let viewController: UIViewController = UIHostingController(rootView: TransactionView(viewModel: viewModel))
             return viewController
-        case .addTransaction(let reloadTransactionsData):
-            let viewModel: AddTransactionViewModel = AddTransactionViewModel(opener: self.opener(),
-                                                                             reloadTransactionsData: reloadTransactionsData)
+        case .addTransaction:
+            let viewModel: AddTransactionViewModel = AddTransactionViewModel(opener: self.opener())
             let viewController: UIViewController = UIHostingController(rootView: AddTransactionView(viewModel: viewModel))
             return viewController
         }
@@ -66,8 +64,8 @@ extension TransactionScene {
     private func opener() -> ((TransactionOpener) -> Void)? {
         return { opener in
             switch opener {
-            case .addTransaction(let reloadTransactionsData):
-                let scene: SceneType = TransactionScene.addTransaction(reloadTransactionsData: reloadTransactionsData)
+            case .addTransaction:
+                let scene: SceneType = TransactionScene.addTransaction
                 let transition: SceneTransitionType = .modal(scene: scene, animated: true)
                 let coordinator: SceneCoordinator = SceneCoordinator()
                 coordinator.transition(type: transition)

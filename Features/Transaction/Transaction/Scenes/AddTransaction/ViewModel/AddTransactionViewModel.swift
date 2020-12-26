@@ -21,17 +21,14 @@ public class AddTransactionViewModel: ObservableObject {
     @Published var commission: String = ""
     @Published var note: String = ""
     
-    private let saveTransactionsFromDatabaseUseCase: SaveTransactionsFromDatabaseUseCase
+    private let saveTransactionUseCase: SaveTransactionUseCase
     
     public let opener: ((TransactionOpener) -> Void)?
-    public let reloadTransactionsData: CurrentValueSubject<Void, Never>
     
     public init(opener: ((TransactionOpener) -> Void)?,
-                saveTransactionsFromDatabaseUseCase: SaveTransactionsFromDatabaseUseCase = SaveTransactionsFromDatabaseUseCaseImpl(),
-                reloadTransactionsData: CurrentValueSubject<Void, Never>) {
+                saveTransactionUseCase: SaveTransactionUseCase = SaveTransactionUseCaseImpl()) {
         self.opener = opener
-        self.saveTransactionsFromDatabaseUseCase = saveTransactionsFromDatabaseUseCase
-        self.reloadTransactionsData = reloadTransactionsData
+        self.saveTransactionUseCase = saveTransactionUseCase
     }
     
     func selectedCancelButton() {
@@ -47,18 +44,18 @@ public class AddTransactionViewModel: ObservableObject {
                                                                id: UUID(),
                                                                commission: commission,
                                                                note: note)
-        self.saveTransactionsFromDatabaseUseCase.execute(transaction: transaction)
-            .sink { (error) in
-                switch error {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            } receiveValue: { (response) in
-                self.reloadTransactionsData.send(Void())
-                self.opener?(.dismiss)
-            }
-            .store(in: &self.subscriptions)
+        
+        if transaction.symbol == "" {
+            print("symbolIsEmpty")
+        } else if transaction.price == "" {
+            print("priceIsEmptry")
+        } else if transaction.size == "" {
+            print("sizeIsEmptry")
+        } else if transaction.commission == "" {
+            print("commissionIsEmptry")
+        } else {
+            self.saveTransactionUseCase.execute(transaction: transaction)
+            self.opener?(.dismiss)
+        }
     }
 }
