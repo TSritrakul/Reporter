@@ -24,61 +24,40 @@ public class AddTransactionViewModel: ObservableObject {
     private let saveTransactionsUseCase: SaveTransactionsUseCase
     
     public let opener: ((TransactionOpener) -> Void)?
+    public let reloadTransactionsData: CurrentValueSubject<Void, Never>
     
     public init(opener: ((TransactionOpener) -> Void)?,
-                saveTransactionsUseCase: SaveTransactionsUseCase = SaveTransactionsUseCaseImpl()) {
+                saveTransactionsUseCase: SaveTransactionsUseCase = SaveTransactionsUseCaseImpl(),
+                reloadTransactionsData: CurrentValueSubject<Void, Never>) {
         self.opener = opener
         self.saveTransactionsUseCase = saveTransactionsUseCase
-
-//        self.selectedSaveButton.flatMap { [weak self] (_) -> AnyPublisher<Void, SaveTransactionsError> in
-//            guard let self = self else { return Fail<Void, SaveTransactionsError>(error: .weakSelfError).eraseToAnyPublisher() }
-//            return self.saveTransactionsUseCase.execute(symbol: self.symbol,
-//                                                        action: self.action,
-//                                                        date: self.date,
-//                                                        price: self.price,
-//                                                        size: self.size,
-//                                                        commission: self.commission,
-//                                                        note: self.note)
-//        }.sink { (error) in
-//            print(error)
-//        } receiveValue: { (_) in
-//            print("SS")
-////            self.opener?(.dismiss)
-//        }.store(in: &self.subscriptions)
-
+        self.reloadTransactionsData = reloadTransactionsData
     }
     
     func selectedCancelButton() {
-        
-        let coreDataProvider: CoreDataProvider<Transactions> = CoreDataProvider<Transactions>(coreDataName: .data)
-        
-        coreDataProvider.fetch(Transactions.self).sink { (error) in
-//            print(error)
-        } receiveValue: { (response) in
-            for x in response {
-                print(x.symbol)
-            }
-            if let first = response.first {
-                print("Delete: \(first)")
-//                coreDataProvider.context.delete(first)
-            }
-        }.store(in: &self.subscriptions)
-
-//        self.opener?(.dismiss)
+        self.opener?(.dismiss)
     }
     
     func selectedSaveButton() {
-        self.saveTransactionsUseCase.execute(symbol: self.symbol,
-                                                    action: self.action,
-                                                    date: self.date,
-                                                    price: self.price,
-                                                    size: self.size,
-                                                    commission: self.commission,
-                                                    note: self.note)
+        let transaction: TransactionsModel = TransactionsModel(symbol: symbol,
+                                                               action: action,
+                                                               date: date,
+                                                               price: price,
+                                                               size: size,
+                                                               id: UUID(),
+                                                               commission: commission,
+                                                               note: note)
+        self.saveTransactionsUseCase.execute(transaction: transaction)
             .sink { (error) in
-                print(error)
+                switch error {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
             } receiveValue: { (response) in
-                print("Success")
+                self.reloadTransactionsData.send(Void())
+                self.opener?(.dismiss)
             }
             .store(in: &self.subscriptions)
     }

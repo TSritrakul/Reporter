@@ -18,43 +18,26 @@ public enum SaveTransactionsError: Error {
 }
 
 public protocol SaveTransactionsUseCase {
-    func execute(symbol: String,
-                 action: String,
-                 date: Date,
-                 price: String,
-                 size: String,
-                 commission: String,
-                 note: String) -> AnyPublisher<Void, SaveTransactionsError>
+    func execute(transaction: TransactionsModel) -> AnyPublisher<Void, SaveTransactionsError>
 }
 
 public class SaveTransactionsUseCaseImpl: SaveTransactionsUseCase {
     public init() {}
     
-    public func execute(symbol: String,
-                        action: String,
-                        date: Date,
-                        price: String,
-                        size: String,
-                        commission: String,
-                        note: String) -> AnyPublisher<Void, SaveTransactionsError> {
-        return self.validateTransaction(symbol: symbol,
-                                        action: action,
-                                        date: date,
-                                        price: price,
-                                        size: size,
-                                        commission: commission,
-                                        note: note)
+    public func execute(transaction: TransactionsModel) -> AnyPublisher<Void, SaveTransactionsError> {
+        return self.validateTransaction(transaction: transaction)
             .flatMap { (response) -> AnyPublisher<Void, SaveTransactionsError> in
                 let coreDataProvider: CoreDataProvider<Transactions> = CoreDataProvider<Transactions>(coreDataName: .data)
                 let entity = Transactions(context: coreDataProvider.context)
-                entity.symbol = symbol
-                entity.action = action
-                entity.date = date
-                entity.price = price
-                entity.size = size
-                entity.commission = commission
-                entity.note = note
-                return  coreDataProvider.save(entity).map { (response) -> Void in
+                entity.symbol = transaction.symbol
+                entity.action = transaction.action
+                entity.date = transaction.date
+                entity.price = transaction.price
+                entity.size = transaction.size
+                entity.commission = transaction.commission
+                entity.note = transaction.note
+                entity.id = transaction.id
+                return  coreDataProvider.save().map { (response) -> Void in
                     return Void()
                 }
                 .mapError { (error) -> SaveTransactionsError in
@@ -63,39 +46,20 @@ public class SaveTransactionsUseCaseImpl: SaveTransactionsUseCase {
             }.eraseToAnyPublisher()
     }
     
-    private func validateTransaction(symbol: String,
-                                     action: String,
-                                     date: Date,
-                                     price: String,
-                                     size: String,
-                                     commission: String,
-                                     note: String) -> AnyPublisher<(symbol: String,
-                                                                    action: String,
-                                                                    date: Date,
-                                                                    price: String,
-                                                                    size: String,
-                                                                    commission: String,
-                                                                    note: String),
-                                                                   SaveTransactionsError> {
+    private func validateTransaction(transaction: TransactionsModel) -> Future<TransactionsModel, SaveTransactionsError> {
         return Future { (promise) in
-            if symbol.isEmpty {
+            
+            if transaction.symbol == "" {
                 promise(.failure(.symbolIsEmpty))
-            } else if price.isEmpty {
+            } else if transaction.price == "" {
                 promise(.failure(.priceIsEmptry))
-            } else if size.isEmpty {
+            } else if transaction.size == "" {
                 promise(.failure(.sizeIsEmptry))
-            } else if commission.isEmpty {
+            } else if transaction.commission == "" {
                 promise(.failure(.commissionIsEmptry))
             }
             
-            promise(.success((symbol: "String",
-                              action: "String",
-                              date: Date(),
-                              price: "String",
-                              size: "String",
-                              commission: "String",
-                              note: "String")))
+            promise(.success(transaction))
         }
-        .eraseToAnyPublisher()
     }
 }

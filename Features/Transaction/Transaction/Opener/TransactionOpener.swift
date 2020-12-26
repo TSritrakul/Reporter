@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
 public enum TransactionOpener {
-    case addTransaction
+    case addTransaction(reloadTransactionsData: CurrentValueSubject<Void, Never>)
     case dismiss
 }

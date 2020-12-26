@@ -12,8 +12,8 @@ public enum CoreDataName {
     case data
 }
 
-public final class CoreDataManager {
-    public static let shared: CoreDataManager = CoreDataManager()
+final class CoreDataManager {
+    static let shared: CoreDataManager = CoreDataManager()
     
     lazy var dataPersistentContainer: NSPersistentContainer = {
         let modelURL = Bundle(identifier: "com.rolland.Data")?.url(forResource: "Data", withExtension: "momd")
@@ -29,7 +29,7 @@ public final class CoreDataManager {
         return container
     }()
     
-    public func getPersistentContainer(coreDataType: CoreDataName) -> NSPersistentContainer {
+    func getPersistentContainer(coreDataType: CoreDataName) -> NSPersistentContainer {
         switch coreDataType {
         case .data:
             return self.dataPersistentContainer

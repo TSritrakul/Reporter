@@ -6,15 +6,19 @@
 //
 
 import Foundation
+import Combine
 
 public class AddTransactionButtonViewModel: ObservableObject {
     private let opener: ((TransactionOpener) -> Void)?
+    public let reloadTransactionsData: CurrentValueSubject<Void, Never>
     
-    public init(opener: ((TransactionOpener) -> Void)?) {
+    public init(opener: ((TransactionOpener) -> Void)?,
+                reloadTransactionsData: CurrentValueSubject<Void, Never>) {
         self.opener = opener
+        self.reloadTransactionsData = reloadTransactionsData
     }
     
     public func selectedAddTransactionButton() {
-        self.opener?(.addTransaction)
+        self.opener?(.addTransaction(reloadTransactionsData: reloadTransactionsData))
     }
 }

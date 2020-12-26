@@ -20,12 +20,12 @@ class TabBarViewModel: ObservableObject {
     }
     
     func fetchData() {
-        let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
-        coreDataProvider.fetch(Profile.self).sink { (error) in
-            print(error)
-        } receiveValue: { (response) in
-            print(response)
-        }.store(in: &self.subscriptions)
+//        let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
+//        coreDataProvider.fetch(Profile.self).sink { (error) in
+//            print(error)
+//        } receiveValue: { (response) in
+//            print(response)
+//        }.store(in: &self.subscriptions)
 
     }
 }

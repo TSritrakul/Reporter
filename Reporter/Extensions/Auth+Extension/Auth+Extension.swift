@@ -22,14 +22,13 @@ extension GIDSignIn: AuthenticationType {
         
         _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
-                let entity = Profile(context: coreDataProvider.context)
-                entity.userID = user?.uid
-                coreDataProvider.save(entity)
+                let saveProfileUseCase: SaveProfileUseCase = SaveProfileUseCaseImpl()
+                let profile: ProfileModel = ProfileModel(userID: user?.uid)
+                saveProfileUseCase.execute(profile: profile)
                 GIDSignIn.isLogin.send(true)
             } else {
-                let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
-                coreDataProvider.clear(Profile.self)
+//                let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
+//                coreDataProvider.clear(Profile.self)
                 GIDSignIn.isLogin.send(false)
             }
         }

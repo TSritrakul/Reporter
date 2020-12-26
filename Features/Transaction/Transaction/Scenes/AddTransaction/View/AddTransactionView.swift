@@ -20,7 +20,7 @@ public struct AddTransactionView: View {
                 List {
                     HStack {
                         Text("Symbol")
-                            .font(.title)
+                            .font(.body)
                         TextField("Input Symbol", text: self.$viewModel.symbol)
                             .multilineTextAlignment(.trailing)
                     }
