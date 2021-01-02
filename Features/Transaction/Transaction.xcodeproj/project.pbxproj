@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EAFCE942597A3B600D8A11F /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFCE932597A3B600D8A11F /* TransactionCellViewModel.swift */; };
+		0EAFCE9A2597A43500D8A11F /* TransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFCE992597A43500D8A11F /* TransactionCellView.swift */; };
+		0EAFCE9E2598603400D8A11F /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAFCE9D2598603400D8A11F /* Data.framework */; };
 		0EC94657258DA32C00936B84 /* Transaction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC9464D258DA32C00936B84 /* Transaction.framework */; };
 		0EC9465C258DA32C00936B84 /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9465B258DA32C00936B84 /* TransactionTests.swift */; };
 		0EC9465E258DA32C00936B84 /* Transaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EC94650258DA32C00936B84 /* Transaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		04A885A7B078E3BC4E4BEF2F /* libPods-Transaction.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Transaction.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EAFCE932597A3B600D8A11F /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
+		0EAFCE992597A43500D8A11F /* TransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellView.swift; sourceTree = "<group>"; };
+		0EAFCE9D2598603400D8A11F /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC9464D258DA32C00936B84 /* Transaction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Transaction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC94650258DA32C00936B84 /* Transaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		0EC94651258DA32C00936B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAFCE9E2598603400D8A11F /* Data.framework in Frameworks */,
 				92B6EDA9D20B0D6CB3822F3F /* libPods-Transaction.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +76,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EAFCE8A2597A35A00D8A11F /* TransactionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0EAFCE8C2597A37A00D8A11F /* View */,
+				0EAFCE8B2597A37700D8A11F /* ViewModel */,
+			);
+			path = TransactionCell;
+			sourceTree = "<group>";
+		};
+		0EAFCE8B2597A37700D8A11F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0EAFCE932597A3B600D8A11F /* TransactionCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0EAFCE8C2597A37A00D8A11F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EAFCE992597A43500D8A11F /* TransactionCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0EC94643258DA32C00936B84 = {
 			isa = PBXGroup;
 			children = (
@@ -112,9 +144,10 @@
 		0EC94683258DA56700936B84 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0EC94776258DC46300936B84 /* AddTransactionButton */,
 				0EC94685258DA57F00936B84 /* AddTransaction */,
+				0EC94776258DC46300936B84 /* AddTransactionButton */,
 				0EC94684258DA57400936B84 /* Transaction */,
+				0EAFCE8A2597A35A00D8A11F /* TransactionCell */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -215,6 +248,7 @@
 		D100932B8620E8438F3B072D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EAFCE9D2598603400D8A11F /* Data.framework */,
 				04A885A7B078E3BC4E4BEF2F /* libPods-Transaction.a */,
 			);
 			name = Frameworks;
@@ -361,6 +395,8 @@
 				0EC9468B258DA5C700936B84 /* TransactionView.swift in Sources */,
 				0EC9468F258DA5D200936B84 /* TransactionViewModel.swift in Sources */,
 				0EC94697258DA5FD00936B84 /* AddTransactionViewModel.swift in Sources */,
+				0EAFCE9A2597A43500D8A11F /* TransactionCellView.swift in Sources */,
+				0EAFCE942597A3B600D8A11F /* TransactionCellViewModel.swift in Sources */,
 				0EC946A5258DA84F00936B84 /* TransactionOpener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -84,6 +84,7 @@
 		0ECBC3A02583776900DF612E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0ED16CCE25A049E900304F5A /* Manager */,
 				0EE757C3258BC694002A5EFE /* Navigations */,
 				0ECBC3A12583776900DF612E /* Core.h */,
 				0ECBC3A22583776900DF612E /* Info.plist */,
@@ -98,6 +99,13 @@
 				0ECBC3AE2583776A00DF612E /* Info.plist */,
 			);
 			path = CoreTests;
+			sourceTree = "<group>";
+		};
+		0ED16CCE25A049E900304F5A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		0EE757C3258BC694002A5EFE /* Navigations */ = {

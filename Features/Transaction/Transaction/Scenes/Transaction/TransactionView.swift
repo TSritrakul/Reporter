@@ -19,8 +19,8 @@ public struct TransactionView: View {
             ZStack {
                 List {
                     if self.viewModel.transactions.count > 0 {
-                        ForEach(0...(self.viewModel.transactions.count-1), id: \.self) { (index) in
-                            Text(self.viewModel.transactions[index].symbol ?? "")
+                        ForEach(self.viewModel.transactions.reversed(), id: \.id) { (response) in
+                            TransactionCellView(viewModel: TransactionCellViewModel(transaction: response))
                         }
                         .onDelete { (index) in
                             self.viewModel.deleteTransaction(index: index)
