@@ -31,10 +31,10 @@ class TransactionsManager {
         self.saveTransactionWithFirestoreUseCase = saveTransactionWithFirestoreUseCase
         self.getTransactionWithFirestoreUseCase = getTransactionWithFirestoreUseCase
         
-        self.getTransactions()
+        self.getTransactions(firstTime: true)
     }
     
-    func getTransactions() {
+    func getTransactions(firstTime: Bool = false) {
         self.getTransactionsWithDatabaseUseCase.execute().sink { (error) in
             switch error {
             case .finished:
@@ -46,7 +46,7 @@ class TransactionsManager {
             let response = response.sorted { (first, second) -> Bool in
                 return first.date ?? Date() > second.date ?? Date()
             }
-            if response.isEmpty {
+            if response.isEmpty && firstTime {
                 self.getTransactionWithFirestore()
             } else {
                 self.transactions.send(response)
