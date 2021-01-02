@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 public protocol DeleteTransactionUseCase {
-    func execute(transaction: TransactionsModel)
+    func execute(transaction: TransactionsModelElement)
 }
 
 public class DeleteTransactionUseCaseImpl: DeleteTransactionUseCase {
     public init() {}
     
-    public func execute(transaction: TransactionsModel) {
+    public func execute(transaction: TransactionsModelElement) {
         return TransactionsManager.shared.deleteTransaction(transaction: transaction)
     }
 }

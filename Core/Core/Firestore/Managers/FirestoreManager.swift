@@ -11,10 +11,13 @@ import Combine
 public enum FirestoreError: Error {
     case setError(error: Error)
     case getError(error: Error)
+    case profileEmpty
 }
 
 public protocol FirestoreType {
     static func setData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError>
+    
+    static func updateData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError>
     
     static func getData(context: [FirestoreRequestModel]) -> Future<[String:Any], FirestoreError>
     
@@ -44,6 +47,10 @@ public class FirestoreManager {
     
     public func setData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError> {
         return self.firestoreConfig.setData(context: context, data: data)
+    }
+    
+    public func updateData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError> {
+        return self.firestoreConfig.updateData(context: context, data: data)
     }
     
     /// Use for fetching data from Firestore.

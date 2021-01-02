@@ -12,12 +12,12 @@ public enum ClearProfileError: Error {
     case clearError
 }
 
-public protocol ClearProfileFromDatabaseUseCase {
+public protocol ClearProfileWithDatabaseUseCase {
     @discardableResult
     func execute() -> AnyPublisher<Void, ClearProfileError>
 }
 
-public class ClearProfileFromDatabaseUseCaseImpl: ClearProfileFromDatabaseUseCase {
+public class ClearProfileWithDatabaseUseCaseImpl: ClearProfileWithDatabaseUseCase {
     
     public init() {}
     

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - TransactionsModel
-public struct TransactionsModel: Codable, Identifiable {
+public struct TransactionsModelElement: Codable, Identifiable {
     public let symbol: String?
     public let action: String?
     public let date: Date?
@@ -40,3 +40,5 @@ public struct TransactionsModel: Codable, Identifiable {
         self.note = note
     }
 }
+
+public typealias TransactionsModel = [TransactionsModelElement]

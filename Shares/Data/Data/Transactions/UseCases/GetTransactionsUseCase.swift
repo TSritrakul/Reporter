@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 public protocol GetTransactionsUseCase {
-    func execute() -> CurrentValueSubject<[TransactionsModel], Never>
+    func execute() -> CurrentValueSubject<TransactionsModel, Never>
 }
 
 public class GetTransactionsUseCaseImpl: GetTransactionsUseCase {
     public init() {}
     
-    public func execute() -> CurrentValueSubject<[TransactionsModel], Never> {
+    public func execute() -> CurrentValueSubject<TransactionsModel, Never> {
         return TransactionsManager.shared.transactions
     }
 }

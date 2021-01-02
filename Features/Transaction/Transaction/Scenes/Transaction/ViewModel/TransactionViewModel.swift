@@ -10,7 +10,7 @@ import Data
 import Combine
 
 public class TransactionViewModel: ObservableObject {
-    @Published var transactions: [TransactionsModel] = []
+    @Published var transactions: TransactionsModel = []
     
     private var subscriptions = Set<AnyCancellable>()
     

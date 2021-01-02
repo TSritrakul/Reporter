@@ -22,12 +22,12 @@ extension GIDSignIn: AuthenticationType {
         
         _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                let saveProfileUseCase: SaveProfileFromDatabaseUseCase = SaveProfileFromDatabaseUseCaseImpl()
+                let saveProfileUseCase: SaveProfileWithDatabaseUseCase = SaveProfileWithDatabaseUseCaseImpl()
                 let profile: ProfileModel = ProfileModel(userID: user?.uid)
                 saveProfileUseCase.execute(profile: profile)
                 GIDSignIn.isLogin.send(true)
             } else {
-                let clearProfileUseCase: ClearProfileFromDatabaseUseCase = ClearProfileFromDatabaseUseCaseImpl()
+                let clearProfileUseCase: ClearProfileWithDatabaseUseCase = ClearProfileWithDatabaseUseCaseImpl()
                 clearProfileUseCase.execute()
                 GIDSignIn.isLogin.send(false)
             }

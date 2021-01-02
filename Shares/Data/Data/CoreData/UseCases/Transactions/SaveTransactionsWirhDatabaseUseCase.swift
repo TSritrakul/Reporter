@@ -17,14 +17,14 @@ public enum SaveTransactionsError: Error {
     case weakSelfError
 }
 
-public protocol SaveTransactionsFromDatabaseUseCase {
-    func execute(transaction: TransactionsModel) -> AnyPublisher<Void, SaveTransactionsError>
+public protocol SaveTransactionsWithDatabaseUseCase {
+    func execute(transaction: TransactionsModelElement) -> AnyPublisher<Void, SaveTransactionsError>
 }
 
-public class SaveTransactionsFromDatabaseUseCaseImpl: SaveTransactionsFromDatabaseUseCase {
+public class SaveTransactionsWithDatabaseUseCaseImpl: SaveTransactionsWithDatabaseUseCase {
     public init() {}
     
-    public func execute(transaction: TransactionsModel) -> AnyPublisher<Void, SaveTransactionsError> {
+    public func execute(transaction: TransactionsModelElement) -> AnyPublisher<Void, SaveTransactionsError> {
         return self.validateTransaction(transaction: transaction)
             .flatMap { (response) -> AnyPublisher<Void, SaveTransactionsError> in
                 let coreDataProvider: CoreDataProvider<Transactions> = CoreDataProvider<Transactions>(coreDataName: .data)
@@ -46,7 +46,7 @@ public class SaveTransactionsFromDatabaseUseCaseImpl: SaveTransactionsFromDataba
             }.eraseToAnyPublisher()
     }
     
-    private func validateTransaction(transaction: TransactionsModel) -> Future<TransactionsModel, SaveTransactionsError> {
+    private func validateTransaction(transaction: TransactionsModelElement) -> Future<TransactionsModelElement, SaveTransactionsError> {
         return Future { (promise) in
             
             if transaction.symbol == "" {

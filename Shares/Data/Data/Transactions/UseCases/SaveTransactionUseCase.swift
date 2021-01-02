@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 public protocol SaveTransactionUseCase {
-    func execute(transaction: TransactionsModel)
+    func execute(transaction: TransactionsModelElement)
 }
 
 public class SaveTransactionUseCaseImpl: SaveTransactionUseCase {
     public init() {}
     
-    public func execute(transaction: TransactionsModel) {
+    public func execute(transaction: TransactionsModelElement) {
         return TransactionsManager.shared.saveTransaction(transaction: transaction)
     }
 }

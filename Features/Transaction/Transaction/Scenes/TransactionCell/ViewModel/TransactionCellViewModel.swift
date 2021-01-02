@@ -9,9 +9,9 @@ import Foundation
 import Data
 
 class TransactionCellViewModel: ObservableObject {
-    @Published var transactions: TransactionsModel
+    @Published var transactions: TransactionsModelElement
     
-    init(transaction: TransactionsModel) {
+    init(transaction: TransactionsModelElement) {
         self.transactions = transaction
     }
     

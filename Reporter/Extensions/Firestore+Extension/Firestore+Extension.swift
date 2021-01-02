@@ -6,6 +6,7 @@
 //
 
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 import Core
 import Combine
 
@@ -17,12 +18,27 @@ extension Firestore: FirestoreType {
 //        
 //        let db = self.firestore()
 //        db.settings = settings
+//        _ = db.collection("users").addDocument(data: ["transaction": [["symbol": "SCB", "price": "10"], ["symbol": "PTT", "price": "10"]]], completion: { (error) in
+//            print(error)
+//        })
     }
     
     public static func setData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError> {
         let documentReference = self.getDocumentReference(context: context)
         return Future { (promise) in
             documentReference.setData(data) { (error) in
+                if let error = error {
+                    promise(.failure(.setError(error: error)))
+                }
+            }
+            promise(.success(Void()))
+        }
+    }
+    
+    public static func updateData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError> {
+        let documentReference = self.getDocumentReference(context: context)
+        return Future { (promise) in
+            documentReference.updateData(data) { (error) in
                 if let error = error {
                     promise(.failure(.setError(error: error)))
                 }

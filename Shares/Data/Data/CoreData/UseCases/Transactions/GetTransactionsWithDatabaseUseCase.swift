@@ -13,21 +13,21 @@ public enum GetTransactionsError: Error {
     case notFoundElement
 }
 
-public protocol GetTransactionsFromDatabaseUseCase {
-    func execute() -> AnyPublisher<[TransactionsModel], GetTransactionsError>
+public protocol GetTransactionsWithDatabaseUseCase {
+    func execute() -> AnyPublisher<TransactionsModel, GetTransactionsError>
 }
 
-public class GetTransactionsFromDatabaseUseCaseImpl: GetTransactionsFromDatabaseUseCase {
+public class GetTransactionsWithDatabaseUseCaseImpl: GetTransactionsWithDatabaseUseCase {
     public init() {}
     
-    public func execute() -> AnyPublisher<[TransactionsModel], GetTransactionsError> {
+    public func execute() -> AnyPublisher<TransactionsModel, GetTransactionsError> {
         let coreDataProvider: CoreDataProvider<Transactions> = CoreDataProvider<Transactions>(coreDataName: .data)
         return coreDataProvider.fetch(Transactions.self)
             .mapError { (error) -> GetTransactionsError in
                 return .fetchError
-            }.map({ (response) -> [TransactionsModel] in
-                return response.map { (response) -> TransactionsModel in
-                    return TransactionsModel(symbol: response.symbol,
+            }.map({ (response) -> TransactionsModel in
+                return response.map { (response) -> TransactionsModelElement in
+                    return TransactionsModelElement(symbol: response.symbol,
                                              action: response.action,
                                              date: response.date,
                                              price: response.price,

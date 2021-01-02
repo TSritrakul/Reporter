@@ -12,11 +12,11 @@ public enum GetProfileError: Error {
     case fetchError
 }
 
-public protocol GetProfileFromDatabaseUseCase {
+public protocol GetProfileWithDatabaseUseCase {
     func execute() -> AnyPublisher<[Profile], GetProfileError>
 }
 
-public class GetProfileFromDatabaseUseCaseImpl: GetProfileFromDatabaseUseCase {
+public class GetProfileWithDatabaseUseCaseImpl: GetProfileWithDatabaseUseCase {
     public init() {}
     
     public func execute() -> AnyPublisher<[Profile], GetProfileError> {

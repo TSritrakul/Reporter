@@ -11,25 +11,28 @@ import Combine
 class TransactionsManager {
     static let shared: TransactionsManager = TransactionsManager()
     
-    var transactions: CurrentValueSubject = CurrentValueSubject<[TransactionsModel], Never>([])
+    var transactions: CurrentValueSubject = CurrentValueSubject<TransactionsModel, Never>([])
     private var subscriptions = Set<AnyCancellable>()
-    private let getTransactionsFromDatabaseUseCase: GetTransactionsFromDatabaseUseCase
-    private let saveTransactionsFromDatabaseUseCase: SaveTransactionsFromDatabaseUseCase
-    private let deleteTransactionsFromDatabaseUseCase: DeleteTransactionFromDatabaseUseCase
+    private let getTransactionsWithDatabaseUseCase: GetTransactionsWithDatabaseUseCase
+    private let saveTransactionsWithDatabaseUseCase: SaveTransactionsWithDatabaseUseCase
+    private let deleteTransactionsWithDatabaseUseCase: DeleteTransactionWithDatabaseUseCase
+    private let saveTransactionWithFirestoreUseCase: SaveTransactionWithFirestoreUseCase
     
     
-    init(getTransactionsFromDatabaseUseCase: GetTransactionsFromDatabaseUseCase = GetTransactionsFromDatabaseUseCaseImpl(),
-         saveTransactionsFromDatabaseUseCase: SaveTransactionsFromDatabaseUseCase = SaveTransactionsFromDatabaseUseCaseImpl(),
-         deleteTransactionsFromDatabaseUseCase: DeleteTransactionFromDatabaseUseCase = DeleteTransactionFromDatabaseUseCaseImpl()) {
-        self.getTransactionsFromDatabaseUseCase = getTransactionsFromDatabaseUseCase
-        self.saveTransactionsFromDatabaseUseCase = saveTransactionsFromDatabaseUseCase
-        self.deleteTransactionsFromDatabaseUseCase = deleteTransactionsFromDatabaseUseCase
+    init(getTransactionsWithDatabaseUseCase: GetTransactionsWithDatabaseUseCase = GetTransactionsWithDatabaseUseCaseImpl(),
+         saveTransactionsWithDatabaseUseCase: SaveTransactionsWithDatabaseUseCase = SaveTransactionsWithDatabaseUseCaseImpl(),
+         deleteTransactionsWithDatabaseUseCase: DeleteTransactionWithDatabaseUseCase = DeleteTransactionWithDatabaseUseCaseImpl(),
+         saveTransactionWithFirestoreUseCase: SaveTransactionWithFirestoreUseCase = SaveTransactionWithFirestoreUseCaseImpl()) {
+        self.getTransactionsWithDatabaseUseCase = getTransactionsWithDatabaseUseCase
+        self.saveTransactionsWithDatabaseUseCase = saveTransactionsWithDatabaseUseCase
+        self.deleteTransactionsWithDatabaseUseCase = deleteTransactionsWithDatabaseUseCase
+        self.saveTransactionWithFirestoreUseCase = saveTransactionWithFirestoreUseCase
         
         self.getTransactions()
     }
     
     func getTransactions() {
-        self.getTransactionsFromDatabaseUseCase.execute().sink { (error) in
+        self.getTransactionsWithDatabaseUseCase.execute().sink { (error) in
             switch error {
             case .finished:
                 break
@@ -42,8 +45,8 @@ class TransactionsManager {
         .store(in: &self.subscriptions)
     }
     
-    func saveTransaction(transaction: TransactionsModel) {
-        self.saveTransactionsFromDatabaseUseCase.execute(transaction: transaction).sink { (error) in
+    func saveTransaction(transaction: TransactionsModelElement) {
+        self.saveTransactionsWithDatabaseUseCase.execute(transaction: transaction).sink { (error) in
             switch error {
             case .finished:
                 break
@@ -52,11 +55,27 @@ class TransactionsManager {
             }
         } receiveValue: { (_) in
             self.getTransactions()
+            self.saveTransactionWithFirestore()
         }.store(in: &self.subscriptions)
     }
     
-    func deleteTransaction(transaction: TransactionsModel) {
-        self.deleteTransactionsFromDatabaseUseCase.execute(transaction: transaction).sink { (error) in
+    func saveTransactionWithFirestore() {
+        if let jsonData = try? JSONEncoder().encode(self.transactions.value), let jsonString = String(data: jsonData, encoding: .utf8) {
+            self.saveTransactionWithFirestoreUseCase.execute(data: jsonString).sink { (error) in
+                switch error {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            } receiveValue: { (_) in
+                print("Success")
+            }.store(in: &self.subscriptions)
+        }
+    }
+    
+    func deleteTransaction(transaction: TransactionsModelElement) {
+        self.deleteTransactionsWithDatabaseUseCase.execute(transaction: transaction).sink { (error) in
             switch error {
             case .finished:
                 break

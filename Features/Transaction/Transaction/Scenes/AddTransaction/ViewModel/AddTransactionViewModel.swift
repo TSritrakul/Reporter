@@ -36,7 +36,7 @@ public class AddTransactionViewModel: ObservableObject {
     }
     
     func selectedSaveButton() {
-        let transaction: TransactionsModel = TransactionsModel(symbol: symbol,
+        let transaction: TransactionsModelElement = TransactionsModelElement(symbol: symbol,
                                                                action: action,
                                                                date: date,
                                                                price: price,

@@ -11,14 +11,15 @@ import Combine
 public enum SaveProfileError: Error {
     case userIdIsEmpty
     case saveError
+    case clearError
 }
 
-public protocol SaveProfileFromDatabaseUseCase {
+public protocol SaveProfileWithDatabaseUseCase {
     @discardableResult
     func execute(profile: ProfileModel) -> AnyPublisher<Void, SaveProfileError>
 }
 
-public class SaveProfileFromDatabaseUseCaseImpl: SaveProfileFromDatabaseUseCase {
+public class SaveProfileWithDatabaseUseCaseImpl: SaveProfileWithDatabaseUseCase {
     public init() {}
     
     @discardableResult
@@ -26,10 +27,14 @@ public class SaveProfileFromDatabaseUseCaseImpl: SaveProfileFromDatabaseUseCase 
         let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
         let entity = Profile(context: coreDataProvider.context)
         entity.userID = profile.userID
-        return coreDataProvider.save().map { (response) -> Void in
-            return Void()
-        }.mapError { (errpr) -> SaveProfileError in
-            return .saveError
+        return coreDataProvider.clear(Profile.self).mapError({ (error) -> SaveProfileError in
+            return .clearError
+        }).flatMap { (_) -> AnyPublisher<Void, SaveProfileError> in
+            return coreDataProvider.save().map { (response) -> Void in
+                return Void()
+            }.mapError { (errpr) -> SaveProfileError in
+                return .saveError
+            }.eraseToAnyPublisher()
         }.eraseToAnyPublisher()
     }
     
