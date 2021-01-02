@@ -29,6 +29,7 @@
 		0ECBC40125837A3600DF612E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC40025837A3600DF612E /* Core.framework */; };
 		0ED16CED25A0600700304F5A /* ClearProfileWithDatabaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED16CEC25A0600700304F5A /* ClearProfileWithDatabaseUseCase.swift */; };
 		0ED16D0B25A0719B00304F5A /* SaveTransactionWithFirestoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED16D0A25A0719B00304F5A /* SaveTransactionWithFirestoreUseCase.swift */; };
+		0ED16D1125A0E04500304F5A /* GetTransactionWithFirestoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED16D1025A0E04500304F5A /* GetTransactionWithFirestoreUseCase.swift */; };
 		0EE757A7258BB15D002A5EFE /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE757A5258BB15D002A5EFE /* Profile+CoreDataClass.swift */; };
 		0EE757A8258BB15D002A5EFE /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE757A6258BB15D002A5EFE /* Profile+CoreDataProperties.swift */; };
 		0EFF96532596EE8F0077BE4F /* DeleteTransactionWithDatabaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFF96522596EE8F0077BE4F /* DeleteTransactionWithDatabaseUseCase.swift */; };
@@ -69,6 +70,7 @@
 		0ECBC40025837A3600DF612E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED16CEC25A0600700304F5A /* ClearProfileWithDatabaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearProfileWithDatabaseUseCase.swift; sourceTree = "<group>"; };
 		0ED16D0A25A0719B00304F5A /* SaveTransactionWithFirestoreUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTransactionWithFirestoreUseCase.swift; sourceTree = "<group>"; };
+		0ED16D1025A0E04500304F5A /* GetTransactionWithFirestoreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionWithFirestoreUseCase.swift; sourceTree = "<group>"; };
 		0EE757A5258BB15D002A5EFE /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0EE757A6258BB15D002A5EFE /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0EFF96522596EE8F0077BE4F /* DeleteTransactionWithDatabaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTransactionWithDatabaseUseCase.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				0ED16D0A25A0719B00304F5A /* SaveTransactionWithFirestoreUseCase.swift */,
+				0ED16D1025A0E04500304F5A /* GetTransactionWithFirestoreUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED16D1125A0E04500304F5A /* GetTransactionWithFirestoreUseCase.swift in Sources */,
 				0EB7633A25962BBA00BB4230 /* ProfileModel.swift in Sources */,
 				0EB763302596239800BB4230 /* TransactionModel.swift in Sources */,
 				0E484FC42594FCD500FDB46C /* SaveProfileWithDatabaseUseCase.swift in Sources */,

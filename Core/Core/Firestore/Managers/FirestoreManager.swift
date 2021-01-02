@@ -63,7 +63,7 @@ public class FirestoreManager {
     ///         print(error)
     ///     }
     
-    public func getData(context: [FirestoreRequestModel]) -> Future<[String:Any], FirestoreError> {
+    public func getData(context: [FirestoreRequestModel]) -> Future<[String: Any], FirestoreError> {
         return self.firestoreConfig.getData(context: context)
     }
 }

@@ -17,16 +17,19 @@ class TransactionsManager {
     private let saveTransactionsWithDatabaseUseCase: SaveTransactionsWithDatabaseUseCase
     private let deleteTransactionsWithDatabaseUseCase: DeleteTransactionWithDatabaseUseCase
     private let saveTransactionWithFirestoreUseCase: SaveTransactionWithFirestoreUseCase
+    private let getTransactionWithFirestoreUseCase: GetTransactionWithFirestoreUseCase
     
     
     init(getTransactionsWithDatabaseUseCase: GetTransactionsWithDatabaseUseCase = GetTransactionsWithDatabaseUseCaseImpl(),
          saveTransactionsWithDatabaseUseCase: SaveTransactionsWithDatabaseUseCase = SaveTransactionsWithDatabaseUseCaseImpl(),
          deleteTransactionsWithDatabaseUseCase: DeleteTransactionWithDatabaseUseCase = DeleteTransactionWithDatabaseUseCaseImpl(),
-         saveTransactionWithFirestoreUseCase: SaveTransactionWithFirestoreUseCase = SaveTransactionWithFirestoreUseCaseImpl()) {
+         saveTransactionWithFirestoreUseCase: SaveTransactionWithFirestoreUseCase = SaveTransactionWithFirestoreUseCaseImpl(),
+         getTransactionWithFirestoreUseCase: GetTransactionWithFirestoreUseCase = GetTransactionWithFirestoreUseCaseImpl()) {
         self.getTransactionsWithDatabaseUseCase = getTransactionsWithDatabaseUseCase
         self.saveTransactionsWithDatabaseUseCase = saveTransactionsWithDatabaseUseCase
         self.deleteTransactionsWithDatabaseUseCase = deleteTransactionsWithDatabaseUseCase
         self.saveTransactionWithFirestoreUseCase = saveTransactionWithFirestoreUseCase
+        self.getTransactionWithFirestoreUseCase = getTransactionWithFirestoreUseCase
         
         self.getTransactions()
     }
@@ -43,7 +46,12 @@ class TransactionsManager {
             let response = response.sorted { (first, second) -> Bool in
                 return first.date ?? Date() > second.date ?? Date()
             }
-            self.transactions.send(response)
+            if response.isEmpty {
+                self.getTransactionWithFirestore()
+            } else {
+                self.transactions.send(response)
+                self.saveTransactionWithFirestore()
+            }
         }
         .store(in: &self.subscriptions)
     }
@@ -58,7 +66,6 @@ class TransactionsManager {
             }
         } receiveValue: { (_) in
             self.getTransactions()
-            self.saveTransactionWithFirestore()
         }.store(in: &self.subscriptions)
     }
     
@@ -75,6 +82,19 @@ class TransactionsManager {
                 print("Success")
             }.store(in: &self.subscriptions)
         }
+    }
+    
+    func getTransactionWithFirestore() {
+        self.getTransactionWithFirestoreUseCase.execute().sink { (error) in
+            switch error {
+            case .finished:
+                break
+            case .failure(let error):
+                print(error)
+            }
+        } receiveValue: { (response) in
+            self.transactions.send(response)
+        }.store(in: &self.subscriptions)
     }
     
     func deleteTransaction(transaction: TransactionsModelElement) {
