@@ -40,6 +40,9 @@ class TransactionsManager {
                 print(error)
             }
         } receiveValue: { (response) in
+            let response = response.sorted { (first, second) -> Bool in
+                return first.date ?? Date() > second.date ?? Date()
+            }
             self.transactions.send(response)
         }
         .store(in: &self.subscriptions)

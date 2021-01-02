@@ -19,7 +19,7 @@ public struct TransactionView: View {
             ZStack {
                 List {
                     if self.viewModel.transactions.count > 0 {
-                        ForEach(self.viewModel.transactions.reversed(), id: \.id) { (response) in
+                        ForEach(self.viewModel.transactions, id: \.id) { (response) in
                             TransactionCellView(viewModel: TransactionCellViewModel(transaction: response))
                         }
                         .onDelete { (index) in

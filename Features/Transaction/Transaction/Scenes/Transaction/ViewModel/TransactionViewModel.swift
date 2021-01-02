@@ -41,6 +41,7 @@ public class TransactionViewModel: ObservableObject {
     
     public func deleteTransaction(index: IndexSet) {
         guard let index = Array(index).first else { return }
+        
         self.deleteTransactionUseCase.execute(transaction: self.transactions[index])
     }
 }
