@@ -17,6 +17,8 @@ public protocol FirestoreType {
     static func setData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError>
     
     static func getData(context: [FirestoreRequestModel]) -> Future<[String:Any], FirestoreError>
+    
+    static func config()
 }
 
 public class FirestoreManager {
@@ -27,6 +29,7 @@ public class FirestoreManager {
     
     public func configFirestore(_ firestoreConfig: FirestoreType.Type) {
         self.firestoreConfig = firestoreConfig
+        self.firestoreConfig.config()
     }
     
     /// Use for satting data to Firestore.

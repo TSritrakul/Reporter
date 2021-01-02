@@ -10,6 +10,15 @@ import Core
 import Combine
 
 extension Firestore: FirestoreType {
+    public static func config() {
+//        let settings = FirestoreSettings()
+//        settings.isPersistenceEnabled = true
+//        settings.cacheSizeBytes = FirestoreCacheSizeUnlimited
+//        
+//        let db = self.firestore()
+//        db.settings = settings
+    }
+    
     public static func setData(context: [FirestoreRequestModel], data: [String : Any]) -> Future<Void, FirestoreError> {
         let documentReference = self.getDocumentReference(context: context)
         return Future { (promise) in

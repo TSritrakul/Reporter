@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 import GoogleSignIn
 import Authentication
+import Core
 
 @main
 struct ReporterApp: App {
@@ -17,6 +18,7 @@ struct ReporterApp: App {
     init() {
         FirebaseApp.configure()
         AuthenticationManager.shared.configAuthentication(GIDSignIn.self)
+        FirestoreManager.shared.configFirestore(Firestore.self)
     }
 
     var body: some Scene {

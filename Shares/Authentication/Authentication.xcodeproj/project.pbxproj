@@ -15,7 +15,6 @@
 		0EEB98A52587B798000CAE13 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98A42587B798000CAE13 /* AuthenticationTests.swift */; };
 		0EEB98A72587B798000CAE13 /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EEB98992587B798000CAE13 /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EEB98CC2587B89A000CAE13 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98CB2587B89A000CAE13 /* AuthenticationManager.swift */; };
-		0EEB98D02587B8A2000CAE13 /* AuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEB98CF2587B8A2000CAE13 /* AuthenticationType.swift */; };
 		A030FAA2969A39651763230E /* libPods-Authentication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DECFEE426A34B8435F7622EF /* libPods-Authentication.a */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +40,6 @@
 		0EEB98A42587B798000CAE13 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		0EEB98A62587B798000CAE13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EEB98CB2587B89A000CAE13 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		0EEB98CF2587B8A2000CAE13 /* AuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationType.swift; sourceTree = "<group>"; };
 		6800E4F9624D93F3212F29AA /* Pods-Authentication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.debug.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.debug.xcconfig"; sourceTree = "<group>"; };
 		B1C319FAA657474271A2C0F8 /* Pods-Authentication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.release.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.release.xcconfig"; sourceTree = "<group>"; };
 		DECFEE426A34B8435F7622EF /* libPods-Authentication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Authentication.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				0EEB98CB2587B89A000CAE13 /* AuthenticationManager.swift */,
-				0EEB98CF2587B8A2000CAE13 /* AuthenticationType.swift */,
 			);
 			path = AuthenticationManager;
 			sourceTree = "<group>";
@@ -323,7 +320,6 @@
 			files = (
 				0EE757B2258BB6F0002A5EFE /* SignInViewModel.swift in Sources */,
 				0E41158A258919E800481F5C /* SignInView.swift in Sources */,
-				0EEB98D02587B8A2000CAE13 /* AuthenticationType.swift in Sources */,
 				0EEB98CC2587B89A000CAE13 /* AuthenticationManager.swift in Sources */,
 				0EB7A848258CE40E00336243 /* AuthenticationOpener.swift in Sources */,
 			);

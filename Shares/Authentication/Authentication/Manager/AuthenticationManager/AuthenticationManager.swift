@@ -8,6 +8,13 @@
 import Foundation
 import Combine
 
+public protocol AuthenticationType {
+    static func signIn()
+    static func signOut()
+    static func config()
+    static var isLogin: PassthroughSubject<Bool, Never> { get }
+}
+
 public class AuthenticationManager {
     
     public static let shared: AuthenticationManager = AuthenticationManager()

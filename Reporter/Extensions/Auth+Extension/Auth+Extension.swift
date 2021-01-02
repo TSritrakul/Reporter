@@ -27,8 +27,8 @@ extension GIDSignIn: AuthenticationType {
                 saveProfileUseCase.execute(profile: profile)
                 GIDSignIn.isLogin.send(true)
             } else {
-//                let coreDataProvider: CoreDataProvider<Profile> = CoreDataProvider<Profile>(coreDataName: .data)
-//                coreDataProvider.clear(Profile.self)
+                let clearProfileUseCase: ClearProfileFromDatabaseUseCase = ClearProfileFromDatabaseUseCaseImpl()
+                clearProfileUseCase.execute()
                 GIDSignIn.isLogin.send(false)
             }
         }
