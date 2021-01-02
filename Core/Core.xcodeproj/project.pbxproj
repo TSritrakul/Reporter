@@ -13,6 +13,8 @@
 		0ECBC3A82583776A00DF612E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECBC39E2583776900DF612E /* Core.framework */; };
 		0ECBC3AD2583776A00DF612E /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBC3AC2583776A00DF612E /* CoreTests.swift */; };
 		0ECBC3AF2583776A00DF612E /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ECBC3A12583776900DF612E /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ED16CD125A04A6900304F5A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED16CD025A04A6900304F5A /* FirestoreManager.swift */; };
+		0ED16CE025A04BB700304F5A /* FirestoreRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED16CDF25A04BB700304F5A /* FirestoreRequestModel.swift */; };
 		1A4194E69D7350E25B7F61E4 /* libPods-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40570DB653E23EE30F4DEF8E /* libPods-Core.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		0ECBC3A72583776A00DF612E /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECBC3AC2583776A00DF612E /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		0ECBC3AE2583776A00DF612E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ED16CD025A04A6900304F5A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		0ED16CDF25A04BB700304F5A /* FirestoreRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRequestModel.swift; sourceTree = "<group>"; };
 		40570DB653E23EE30F4DEF8E /* libPods-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E1BDD1CAFB755F8DBE0605 /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
 		866B931AF12BA7E89CF0F623 /* Pods-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.release.xcconfig"; path = "Target Support Files/Pods-Core/Pods-Core.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +88,7 @@
 		0ECBC3A02583776900DF612E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0ED16CCE25A049E900304F5A /* Manager */,
+				0ED16CDA25A04B8000304F5A /* Firestore */,
 				0EE757C3258BC694002A5EFE /* Navigations */,
 				0ECBC3A12583776900DF612E /* Core.h */,
 				0ECBC3A22583776900DF612E /* Info.plist */,
@@ -101,11 +105,29 @@
 			path = CoreTests;
 			sourceTree = "<group>";
 		};
-		0ED16CCE25A049E900304F5A /* Manager */ = {
+		0ED16CDA25A04B8000304F5A /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
+				0ED16CDC25A04B9D00304F5A /* Models */,
+				0ED16CDB25A04B8C00304F5A /* Managers */,
 			);
-			path = Manager;
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		0ED16CDB25A04B8C00304F5A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0ED16CD025A04A6900304F5A /* FirestoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		0ED16CDC25A04B9D00304F5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0ED16CDF25A04BB700304F5A /* FirestoreRequestModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		0EE757C3258BC694002A5EFE /* Navigations */ = {
@@ -274,6 +296,8 @@
 				0EB7A843258CDC2100336243 /* SceneCoordinator.swift in Sources */,
 				0EB7A83B258CDBD300336243 /* SceneType.swift in Sources */,
 				0EB7A83F258CDBFF00336243 /* SceneTransitionType.swift in Sources */,
+				0ED16CE025A04BB700304F5A /* FirestoreRequestModel.swift in Sources */,
+				0ED16CD125A04A6900304F5A /* FirestoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
